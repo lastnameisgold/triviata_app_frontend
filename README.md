@@ -1,2 +1,2 @@
 # triviata_app
-An app that allows people to create and take quizzes.
+ is a quiz and flashcard platform that allows users to create and utilize quizzes and flashcards made by others.
