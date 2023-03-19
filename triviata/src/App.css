@@ -11,9 +11,17 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 /*Start of Flashcard container*/
+.flip-in{
+background-color: blueviolet;
+}
+.flip-out{
+  background-color: aqua;
+}
+
 .flashcards-container{
   width: 34rem;
   height: 23rem;
@@ -24,6 +32,9 @@
   justify-content: center;
   align-items: center;
   transition: ease-in-out 400ms;
+  animation: flipIn-flashcards-container .25s ease-in-out 1;
+  animation-fill-mode: forwards;
+
 
 }
 .flashcards{
@@ -35,12 +46,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: ease-in-out 400ms;
+  transition: ease-in-out .25s;
   cursor: pointer;
-  transition: ease-in-out 400ms;
 
-  /* animation: flipIn-nameof class .25s ease-in-out 1;
-    animation-fill-mode: forwards; */
+  animation: flipIn-flashcards .25s ease-in-out 1;
+  animation-fill-mode: forwards;
 
 }
 .flashcards-inner-container{
@@ -51,16 +61,21 @@
   grid-gap:1rem;
   grid-template-rows: auto 1fr auto;
   transition: ease-in-out 400ms;
-  
+  animation-fill-mode: forwards;
+
 }
 .flashcards-term{
   transition: ease-in-out 400ms;
-  background-color: black;
   width: 100%;
   height: 100%;
+  animation-fill-mode: forwards;
+
 }
 .flashcards-definition{
   transition: ease-in-out 400ms;
+  width: 100%;
+  height: 100%;
+  animation-fill-mode: forwards;
 
 }
 .flashcard-number{
@@ -106,3 +121,156 @@ border-radius: 10px;;
   border-radius: 10px;;
 }
 /*End of Flashcard container*/
+
+/*Start of createFlashCards contatiner*/
+.create-flashcards-container{
+
+}
+/*End of createFlashCards container*/
+
+/*start of create-title containerr*/
+
+.create-title-container{
+  background-color: rgb(255, 255, 255);
+  border: solid 1px rgb(0 0 0 / 25%);
+  box-shadow: 0 4px 4px rgb(0 0 0 / 3%);
+  width:800px;
+  height:38px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-container{
+  background-color: rgb(255, 255, 255);
+  width:790px;
+  height:30px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-inner-container{
+  background-color: rgb(255, 255, 255);
+  width:780px;
+  height:30px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-input{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  width:780px;
+  height:30px;
+  font-size:12px;
+  color:rgb(0, 0, 0);
+}
+/*End of create-title container*/
+
+/*start of description-title containerr*/
+
+.create-desc-container{
+  background-color: rgb(255, 255, 255);
+  border: solid 1px rgb(0 0 0 / 25%);
+  box-shadow: 0 4px 4px rgb(0 0 0 / 3%);
+  width:400px;
+  height:150px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.desc-container{
+  background-color: rgb(87, 23, 23);
+  width:390px;
+  height:140px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.desc-inner-container{
+  background-color: rgb(166, 217, 159);
+  width:385px;
+  height:135px;
+  border-radius:10px;
+  display: flex;
+}
+.desc-input{
+  outline: none;
+  background-color: transparent;
+  border: none;
+  width:380px;
+  height:130px;
+  font-size:12px;
+  color:rgb(0, 0, 0);
+}
+
+/*End of desc-title container*/
+
+/*start of create-tiles container*/
+
+.create-tiles-container{
+  background-color: rgb(255, 255, 255);
+  border: solid 1px rgb(0 0 0 / 25%);
+  box-shadow: 0 4px 4px rgb(0 0 0 / 3%);
+  width:800px;
+  height:170px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tiles-container{
+  background-color: rgb(87, 23, 23);
+  width:790px;
+  height:140px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tiles-inner-container{
+  background-color: rgb(166, 217, 159);
+  width:785px;
+  height:135px;
+  border-radius:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: end;
+
+}
+
+.term-def-container{
+  background-color: rgb(72, 156, 61);
+  width:775px;
+  height:115px;
+  border-radius:10px;
+  display: flex;
+  justify-content: end;
+}
+.term-container{
+width:380px;
+height: 30px;
+background-color: bisque;
+
+border: 1px solid;
+outline: none;
+
+}
+.def-container{
+  border: 1px solid;
+  width:380px;
+height: 30px;
+background-color: bisque;
+border: none;
+outline: none;
+
+
+}
+/*End of create-tiles container*/
+
