@@ -8,11 +8,15 @@ export default function CreateFlashCards(){
       <div className="create-tiles-container">
         <div className="tiles-container">
           <div className="tiles-inner-container">
+            <div className="number-trash-container">
+              <div className="number"><span>1</span></div>
+              <div className="trash-can"><span>2</span></div>
+            </div>
             <div className="term-def-container">
-              <input className="term-container">
+              <input className="term-container" placeholder="Term">
 
               </input>
-              <input className="def-container">
+              <input className="def-container" placeholder="Definition">
 
               </input>
             </div>
