@@ -2,14 +2,30 @@
 Triviata is a quiz and flashcard platform that allows users to create and utilize quizzes and flashcards made by others.
 
 ## The team
+Charlotte Fusco, Jose Reyes, Austin Holland, Fernando Dorado
 
-## Describe the app
+## Technology
 
 ## Key Features
+1. Create Quizzes and Flashcards
+2. Bookmark content
+3. Search and filter
+4. Post comments
+5. Upvote content; quizzes, flashcards, and comments.
+5. Personalization: ability to create account, see stats, change dark/light theme.
 
 ## MVP
+- Ability to create a quiz/flashcards
+- Bookmark quizzes/flashcards
+- Ability to create/sign in to account
+- Upvote/downvote content
+- Light/dak mode
 
-## Post MVP
+## Stretch Goals
+- Gamification: Leaderboard, stats, time spent on quizzes
+- Difficulty levels
+- Random quiz generation
+- Timed quizzes
 
 ## User stories
 
@@ -58,7 +74,6 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
 
 </details>
 
-
 <details>
   <summary>Trending</summary
 
@@ -77,7 +92,6 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
 
 </details>
 
-
 <details>
   <summary>Comments</summary
 
@@ -86,7 +100,6 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
   As a user I want to add comments to quizzes/flashcards I’ve taken so I can share my opinion/thoughts on the content.
 
 </details>
-
 
 <details>
   <summary>Settings</summary
@@ -97,7 +110,6 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
 
 </details>
 
-
 <details>
   <summary>Subjects</summary
 
@@ -106,7 +118,6 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
   As a user I want to see a group of subjects so that I’m able to quickly find the specific quiz I’m looking for based on its category.
 
 </details>
-
 
 <details>
   <summary>Footer</summary
@@ -118,3 +129,5 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
 </details>
 
 ## Links
+- [Triviata Brainstorm FigJam board](https://www.figma.com/file/dleIrxZ0kEZSlrthPxKBZO/Triviata-App---Brainstorm?node-id=0%3A1&t=C00E9f3SvswLWRuT-1)
+- [Project Planning Trello Board](https://trello.com/invite/b/rGkDdrXQ/ATTIf5fa0e90da7a22996147d35e9cce6a219A619CC4/triviata-app)
