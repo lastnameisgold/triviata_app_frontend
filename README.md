@@ -128,6 +128,12 @@ Charlotte Fusco, Jose Reyes, Austin Holland, Fernando Dorado
 
 </details>
 
+## Component Hierarchy
+![Triviata App Component Hierarchy](https://i.imgur.com/GAywF3d.jpg)
+
+## Low Fidelity Wireframes
+![Low Fidelity Wireframes](https://i.imgur.com/Zek7CD9.jpg)
+
 ## Links
 - [Triviata Brainstorm FigJam board](https://www.figma.com/file/dleIrxZ0kEZSlrthPxKBZO/Triviata-App---Brainstorm?node-id=0%3A1&t=C00E9f3SvswLWRuT-1)
 - [Project Planning Trello Board](https://trello.com/invite/b/rGkDdrXQ/ATTIf5fa0e90da7a22996147d35e9cce6a219A619CC4/triviata-app)
