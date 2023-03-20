@@ -15,8 +15,7 @@ const doFlip = ()=>{
 
   console.log(name)
   console.log(flip)
-} 
-
+}
 
   return(
   <div className={name} onClick={()=>{showDef();doFlip();}}>
