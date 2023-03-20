@@ -1,7 +1,7 @@
 export default function Home() {
     return(
         <div>
-            This is the Home component
+            <h3>This is the Home component</h3>
         </div>
     )
 }
