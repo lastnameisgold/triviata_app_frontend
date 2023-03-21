@@ -1,9 +1,22 @@
-import { useEffect, React } from 'react';
+import { useEffect, useState, React } from 'react';
 import { createElement } from 'react'
 import { FaTrashAlt } from 'react-icons/fa';
 
 import Description from "./Description.jsx"
 import Title from "./Title.jsx"
+
+/*potential issues
+1. when refreshed the new divs created dont stay maybe use usestate
+2. the content of the flashcard is also cloned when click add card
+3. when creaed a new card with its term and ef content can make a new class to store it 
+4. how will the unique id of th ecard be related to the user. because there will be multiple sets wtih 1,2,3,4,5 card id
+5. how will the card be linked to the specifc set of the user
+
+if you want to make new divs based on existing array you use maps or filter
+learn more about those becuase they open up more of hwat can be done
+*/
+
+
 export default function CreateFlashCards(){
 
   // class Flashcards{
@@ -29,7 +42,10 @@ function createEl(){
 
     objTo.appendChild(divtest)
 }
+function removeDiv(e){
 
+  alert('removed')
+}
 // const myData = [
 //   {key: 1, name: "Hello"},
 //   {key: 2, name: "World"},
@@ -59,6 +75,33 @@ function createEl(){
     divOG.appendChild(divNew.cloneNode(true));
   }
 
+  const [fruits, setFruits] = useState([
+    'Orange',
+    'Banana',
+    'Apple',
+  ]);
+
+const removeElement = (index) => {
+  const newFruits = fruits.filter((_, i) => i !== index);
+  setFruits(newFruits);
+  let b = fruits.map((fruit, index) => (
+    <div key={index}>
+      <button
+        onClick={() => removeElement(index)}
+      >
+        {fruit}
+      </button>
+      <br />
+      <br />
+    </div>
+  ))
+};
+
+const addDiv=()=>{
+  setFruits(...fruits,fruits.push("bananafish"))
+  console.log(fruits)
+}
+
 
   return(
     
@@ -71,7 +114,7 @@ function createEl(){
           <div className="tiles-inner-container">
             <div className="number-trash-container">
               <div className="number"><span>1</span></div>
-              <div className="trash-can"><span><FaTrashAlt/></span></div>
+              <div className="trash-can"><span><FaTrashAlt onClick={removeDiv}/></span></div>
             </div>
             <div className="term-def-container">
               <input className="term-container" placeholder="Term">
@@ -91,7 +134,7 @@ function createEl(){
       <div className="add-tile-container">
         <div className="inner-add-container">
           <div className="add-button-container">
-            <button className="add-card-btn" onClick={createCard}> + Add Card</button>
+            <button className="add-card-btn" onClick={addDiv}> + Add Card</button>
          
 
           </div>
@@ -99,6 +142,8 @@ function createEl(){
         </div>
         
       </div>
+      
+      {removeElement}
       
 
     </div>
