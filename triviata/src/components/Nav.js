@@ -6,13 +6,25 @@ export default function Nav() {
             <Link to="/">
                 <h2>Triviata</h2>
             </Link>
-
-            <input placeholder="Search for something"/>
+            
+            <div className="search-bar">
+                <span className="material-symbols-rounded">search</span>
+                <input className="search-input" placeholder="Search for quizzes, flashcards, topics"/>
+            </div>
 
             <div className="links-container">
-                <Link to="/create">Create</Link>
-                <Link to="/bookmarks">Bookmarks</Link>
-                <Link to="/profile"> Profile</Link>
+                <Link to="/create">
+                    <button className="create-button">
+                    Create
+                    <span class="material-symbols-rounded">add</span>
+                    </button>
+                </Link>
+                <Link to="/bookmarks">
+                    <span class="material-symbols-rounded">bookmark</span>
+                </Link>
+                <Link to="/profile">
+                    <span class="material-symbols-rounded">account_circle</span>
+                </Link>
 
             </div>
         </div>
