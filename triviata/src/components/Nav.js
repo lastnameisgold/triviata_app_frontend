@@ -25,6 +25,12 @@ export default function Nav() {
                 <Link to="/profile">
                     <span class="material-symbols-rounded">account_circle</span>
                 </Link>
+                
+                {/* For testing purposes! Feel free to change link design for register */}
+                <Link to="/register">
+                    <h3>Register</h3>
+                </Link>
+                
 
             </div>
         </div>
