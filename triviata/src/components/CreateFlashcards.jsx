@@ -76,25 +76,15 @@ function removeDiv(e){
   }
 
   const [fruits, setFruits] = useState([
-    'Orange',
-    'Banana',
-    'Apple',
+    'test1',
+    'test2',
+    'test3',
   ]);
 
 const removeElement = (index) => {
   const newFruits = fruits.filter((_, i) => i !== index);
   setFruits(newFruits);
-  let b = fruits.map((fruit, index) => (
-    <div key={index}>
-      <button
-        onClick={() => removeElement(index)}
-      >
-        {fruit}
-      </button>
-      <br />
-      <br />
-    </div>
-  ))
+  
 };
 
 const addDiv=()=>{
@@ -143,7 +133,16 @@ const addDiv=()=>{
         
       </div>
       
-      {removeElement}
+      {fruits.map((fruit, index) => (
+    <div key={index}>
+      <button
+        onClick={() => removeElement(index)}
+      >
+        {fruit}
+      </button>
+ 
+    </div>
+  ))}
       
 
     </div>
