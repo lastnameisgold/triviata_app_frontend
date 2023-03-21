@@ -2,8 +2,8 @@ import { useEffect, React } from 'react';
 import { createElement } from 'react'
 import { FaTrashAlt } from 'react-icons/fa';
 
-import CreateDescription from "../create/create_quiz/CreateDescription"
-import CreateTitle from "../create/create_quiz/CreateTitle"
+import Description from "./Description.jsx"
+import Title from "./Title.jsx"
 export default function CreateFlashCards(){
 
   // class Flashcards{
@@ -63,8 +63,8 @@ function createEl(){
   return(
     
     <div className="create-flashcards-container"> 
-      <CreateTitle/>
-      <CreateDescription/>
+      <Title/>
+      <Description/>
       <div className="tes">
       <div className="create-tiles-container">
         <div className="tiles-container">
@@ -88,7 +88,6 @@ function createEl(){
 
       </div>
       </div>
-      {'efef'}
       <div className="add-tile-container">
         <div className="inner-add-container">
           <div className="add-button-container">
