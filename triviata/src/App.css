@@ -1,3 +1,11 @@
+/* Material Theme */
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+/* Material Theme */
+
 /* CSS Reset */
 * {
   margin: 0;
@@ -8,12 +16,16 @@
 
 /* Nav */
 .nav-container {
-  background-color: pink;
+  background-color: var(--md-sys-color-surface-variant);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 4rem;
+}
+
+.nav-container a {
+  color: var(--md-sys-color-on-surface-variant);
 }
 
 .nav-container a:link {
@@ -31,7 +43,8 @@
 
 /* Search Bar */
 .search-bar {
-  background-color: white;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
   width: 30rem;
   padding: 0.5rem 1rem;
   display: flex;
@@ -58,7 +71,10 @@
 
 /* Create Button */
 .create-button {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
   font-size: 1rem;
+  font-weight: 600;
   border-style: none;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
@@ -76,7 +92,7 @@
 .material-symbols-rounded {
   font-variation-settings:
   'FILL' 1,
-  'wght' 400,
+  'wght' 600,
   'GRAD' 0,
   'opsz' 24
 }
@@ -84,7 +100,8 @@
 
 /* Card */
 .card-container {
-  background-color: aliceblue;
+  background-color: var(--md-sys-color-tertiary-container);
+  color: var(--md-sys-color-on-tertiary-container);
   min-height: 200px;
   padding: 1rem;
   display: flex;
@@ -126,6 +143,8 @@
 
 /* Home */
 .home-container {
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
   padding: 4rem;
   display: flex;
   flex-direction: column;
@@ -143,7 +162,7 @@
 /* Footer */
 
 .footer-container {
-  background-color: pink;
+  background-color: var(--md-sys-color-surface-variant);
   display: flex;
   flex-direction: column;
   gap: 4rem;

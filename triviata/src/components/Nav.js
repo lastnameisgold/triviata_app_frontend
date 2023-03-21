@@ -4,7 +4,7 @@ export default function Nav() {
     return(
         <div className="nav-container">
             <Link to="/">
-                <h2>Triviata</h2>
+                <h1>Triviata</h1>
             </Link>
             
             <div className="search-bar">
@@ -15,8 +15,8 @@ export default function Nav() {
             <div className="links-container">
                 <Link to="/create">
                     <button className="create-button">
-                    Create
                     <span class="material-symbols-rounded">add</span>
+                    Create
                     </button>
                 </Link>
                 <Link to="/bookmarks">
