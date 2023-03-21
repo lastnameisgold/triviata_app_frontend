@@ -14,6 +14,8 @@ import Title from "./Title.jsx"
 
 if you want to make new divs based on existing array you use maps or filter
 learn more about those becuase they open up more of hwat can be done
+
+6. another issue is that it doesnt ssave when refreshed so it has insert in to ds and save in data base and retrive from data base and update in data base  
 */
 
 
@@ -76,35 +78,18 @@ function removeDiv(e){
   }
 
   const [fruits, setFruits] = useState([
-    'test1',
-    'test2',
-    'test3',
+    'test1'
   ]);
 
-const removeElement = (index) => {
-  const newFruits = fruits.filter((_, i) => i !== index);
-  setFruits(newFruits);
-  
-};
-
-const addDiv=()=>{
-  setFruits(...fruits,fruits.push("bananafish"))
-  console.log(fruits)
-}
-
-
-  return(
-    
-    <div className="create-flashcards-container"> 
-      <Title/>
-      <Description/>
-      <div className="tes">
-      <div className="create-tiles-container">
+  const cardTemaplate = (index)=>{
+return (
+  <div key={index} className="create-tiles-container">
         <div className="tiles-container">
           <div className="tiles-inner-container">
             <div className="number-trash-container">
               <div className="number"><span>1</span></div>
-              <div className="trash-can"><span><FaTrashAlt onClick={removeDiv}/></span></div>
+              <div className="trash-can"><span><FaTrashAlt onClick={() => removeCards(index)}
+/></span></div>
             </div>
             <div className="term-def-container">
               <input className="term-container" placeholder="Term">
@@ -120,11 +105,77 @@ const addDiv=()=>{
         </div>
 
       </div>
+)
+  }
+const removeCards = (index) => {
+  const newFruits = fruits.filter((_, i) => i !== index);
+  setFruits(newFruits);
+  
+};
+const[count,setCount]=useState(0)
+const addCard=()=>{
+
+  setCount(count+1) 
+ 
+  setFruits([...fruits,`${count}`])
+  console.log(fruits)
+  console.log(count)
+
+}
+
+const showNewCards = ()=>{
+  return(
+  fruits.map((fruit, index) => (
+    <div key={index}>
+      {cardTemaplate(index)} 
+      <div>{fruit}</div>
+    </div> 
+    // <div key={index}>
+    //   <button
+    //     onClick={() => removeCards(index)}
+    //   >
+    //     {fruit}
+    //   </button>
+ 
+    // </div>
+  ))
+  )
+}
+
+  return(
+    
+    <div className="create-flashcards-container"> 
+      <Title/>
+      <Description/>
+      <div className="tes">
+      <div className="create-tiles-container">
+        <div className="tiles-container">
+          <div className="tiles-inner-container">
+            <div className="number-trash-container">
+              <div className="number"><span>1</span></div>
+              <div className="trash-can"><span><FaTrashAlt onClick={removeCards}/></span></div>
+            </div>
+            <div className="term-def-container">
+              <input className="term-container" placeholder="Term">
+
+              </input>
+              <input className="def-container" placeholder="Definition">
+
+              </input>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+      {showNewCards()}
+
       </div>
       <div className="add-tile-container">
         <div className="inner-add-container">
           <div className="add-button-container">
-            <button className="add-card-btn" onClick={addDiv}> + Add Card</button>
+            <button className="add-card-btn" onClick={addCard}> + Add Card</button>
          
 
           </div>
@@ -133,16 +184,6 @@ const addDiv=()=>{
         
       </div>
       
-      {fruits.map((fruit, index) => (
-    <div key={index}>
-      <button
-        onClick={() => removeElement(index)}
-      >
-        {fruit}
-      </button>
- 
-    </div>
-  ))}
       
 
     </div>
