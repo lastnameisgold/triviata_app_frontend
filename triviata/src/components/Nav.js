@@ -4,15 +4,33 @@ export default function Nav() {
     return(
         <div className="nav-container">
             <Link to="/">
-                <h2>Triviata</h2>
+                <h1>Triviata</h1>
             </Link>
-
-            <input placeholder="Search for something"/>
+            
+            <div className="search-bar">
+                <span className="material-symbols-rounded">search</span>
+                <input className="search-input" placeholder="Search for quizzes, flashcards, topics"/>
+            </div>
 
             <div className="links-container">
-                <Link to="/create">Create</Link>
-                <Link to="/bookmarks">Bookmarks</Link>
-                <Link to="/profile"> Profile</Link>
+                <Link to="/create">
+                    <button className="create-button">
+                    <span class="material-symbols-rounded">add</span>
+                    Create
+                    </button>
+                </Link>
+                <Link to="/bookmarks">
+                    <span class="material-symbols-rounded">bookmark</span>
+                </Link>
+                <Link to="/profile">
+                    <span class="material-symbols-rounded">account_circle</span>
+                </Link>
+                
+                {/* For testing purposes! Feel free to change link design for register */}
+                <Link to="/register">
+                    <h3>Register</h3>
+                </Link>
+                
 
             </div>
         </div>
