@@ -58,6 +58,8 @@
 }
 
 .search-input {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
   width: 100%;
   border-style: none;
   font-size: 1rem;
