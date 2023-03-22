@@ -139,8 +139,6 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
-
-
 /* Card */
 
 /* Home */
@@ -161,10 +159,44 @@
 }
 /* Home */
 
-/* Footer */
+/* Create */
+.create-container {
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
+  padding: 8rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
+.create-options-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.create-option{
+  width: 30vw;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface-variant);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+/* Create */
+
+/* Footer */
 .footer-container {
   background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -187,7 +219,7 @@
 }
 /* Footer */
 
-/*Start of Flashcard container*/
+/* Start of Flashcard container */
 .flip-in{
 background-color: blueviolet;
 }
@@ -198,7 +230,6 @@ background-color: blueviolet;
 .flashcards-container{
   width: 34rem;
   height: 23rem;
-  /* background-color: aquamarine; */
   border-radius: 10px;
   box-shadow: 0 4px 4px rgb(0 0 0 / 25%);
   display: flex;
@@ -210,6 +241,7 @@ background-color: blueviolet;
 
 
 }
+
 .flashcards{
   width: 33rem;
   height: 22rem;
@@ -226,6 +258,7 @@ background-color: blueviolet;
   animation-fill-mode: forwards;
 
 }
+
 .flashcards-inner-container{
   width: 31rem;
   height: 20rem;
@@ -237,6 +270,7 @@ background-color: blueviolet;
   animation-fill-mode: forwards;
 
 }
+
 .flashcards-term{
   transition: ease-in-out 400ms;
   width: 100%;
@@ -244,6 +278,7 @@ background-color: blueviolet;
   animation-fill-mode: forwards;
 
 }
+
 .flashcards-definition{
   transition: ease-in-out 400ms;
   width: 100%;
@@ -251,6 +286,7 @@ background-color: blueviolet;
   animation-fill-mode: forwards;
 
 }
+
 .flashcard-number{
   width: 100%;
   display: flex;
@@ -258,14 +294,15 @@ background-color: blueviolet;
   align-items: center;
 
 }
+
 .term-container{
-  /* background-color: antiquewhite; */
   width: 100%;
   height: 220px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .prev-next-container{
   height: 3rem;
   display: flex;
@@ -282,8 +319,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 border-radius: 10px;;
-
 }
+
 .next-card{
   width: 8rem;
   height: 3rem;
@@ -293,16 +330,16 @@ border-radius: 10px;;
   align-items: center;
   border-radius: 10px;;
 }
-/*End of Flashcard container*/
+/* End of Flashcard container */
 
-/*Start of createFlashCards contatiner*/
+/* Start of createFlashCards container */
 .create-flashcards-container{
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-/*End of createFlashCards container*/
+/* End of createFlashCards container */
 
-/*start of create-title containerr*/
+/* Start of create-title container */
 
 .create-title-container{
   background-color: rgb(255, 255, 255);
@@ -315,6 +352,7 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .title-container{
   background-color: rgb(255, 255, 255);
   width:990px;
@@ -324,15 +362,21 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .title-inner-container{
   background-color: rgb(255, 255, 255);
-  width:980px;
-  height:30px;
-  border-radius:10px;
+  width: 980px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
+
 .title-input{
   outline: none;
   background-color: transparent;
@@ -342,20 +386,23 @@ flex-direction: column;
   font-size:12px;
   color:rgb(0, 0, 0);
 }
-/*End of create-title container*/
+/* End of create-title container */
 
-/*start of description-title containerr*/
-
+/* Start of description-title container */
 .create-desc-container{
   background-color: rgb(255, 255, 255);
   border: solid 1px rgb(0 0 0 / 25%);
   box-shadow: 0 4px 4px rgb(0 0 0 / 3%);
   width:500px;
   height:150px;
-  border-radius:10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .desc-container{
   background-color: rgba(87, 23, 23, 0);
@@ -377,12 +424,11 @@ flex-direction: column;
   outline: none;
   background-color: transparent;
   border: none;
-  width:480px;
-  height:130px;
-  font-size:12px;
-  color:rgb(0, 0, 0);
+  width: 480px;
+  height: 130px;
+  font-size: 12px;
+  color: rgb(0, 0, 0);
 }
-
 /*End of desc-title container*/
 
 /*start of create-tiles container*/
@@ -434,15 +480,12 @@ flex-direction: column;
 
 }
 .trash-can{
-
-    background-color: rgb(242, 255, 0);
-    width: 30px;
-    text-align: center;
-    height: 40px;
-    cursor: pointer;
-    line-height: 40px;
-
-  
+  background-color: rgb(242, 255, 0);
+  width: 30px;
+  text-align: center;
+  height: 40px;
+  cursor: pointer;
+  line-height: 40px;
 }
 
 .term-def-container{
@@ -464,6 +507,7 @@ outline: none;
 border-bottom:3px black solid;
 
 }
+
 .def-container{
   border: 1px solid;
   width:430px;
@@ -476,8 +520,6 @@ border-bottom:3px black solid;
 
 }
 
-
-
 .add-tile-container{
   background-color: rgb(255, 255, 255);
   border: solid 1px rgb(0 0 0 / 25%);
@@ -489,6 +531,7 @@ border-bottom:3px black solid;
   justify-content: center;
   align-items: end;
 }
+
 .inner-add-container{
   background-color: rgba(166, 211, 160, 0);
   width:985px;
@@ -499,6 +542,7 @@ border-bottom:3px black solid;
   align-items: center;
 
 }
+
 .add-button-container{
   background-color: rgba(211, 160, 160, 0);
   width:175px;
@@ -508,16 +552,15 @@ border-bottom:3px black solid;
   justify-content: center;
   align-items: center;
 }
+
 .add-card-btn{
-background-color: transparent;
-border:none;
-color: rgb(0, 140, 255);
-border-bottom: 5px solid rgb(0, 179, 255);
-height: 40px;
-font-size: 15px;
-font-weight: bold;
-cursor: pointer;
+  background-color: transparent;
+  border:none;
+  color: rgb(0, 140, 255);
+  border-bottom: 5px solid rgb(0, 179, 255);
+  height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
 }
-
-
 /*End of create-tiles container*/
