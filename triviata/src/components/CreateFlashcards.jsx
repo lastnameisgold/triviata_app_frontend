@@ -1,6 +1,7 @@
 import { useEffect, useState, React } from 'react';
 import { createElement } from 'react'
 import { FaTrashAlt } from 'react-icons/fa';
+import Flashcards from './Flashcards.jsx';
 
 import Description from "./Description.jsx"
 import Title from "./Title.jsx"
@@ -71,23 +72,33 @@ function removeDiv(e){
 // let mainContainer = createElement("div", { className: "contexCon" },elements);
 
 
-  const createCard = ()=>{
-    let divOG = document.querySelector(".tes");
-    let divNew = document.querySelector(".create-tiles-container")
-    divOG.appendChild(divNew.cloneNode(true));
-  }
+  // const createCard = ()=>{
+  //   let divOG = document.querySelector(".tes");
+  //   let divNew = document.querySelector(".create-tiles-container")
+  //   divOG.appendChild(divNew.cloneNode(true));
+  // }
 
   const [fruits, setFruits] = useState([
-    'test1'
   ]);
+  const[count,setCount]=useState(1)
+const addCard=()=>{
+
+  setCount(count+1) 
+ 
+  setFruits([...fruits,count])
+  console.log(fruits)
+  console.log(count)
+
+}
 
   const cardTemaplate = (index)=>{
 return (
   <div key={index} className="create-tiles-container">
+ 
         <div className="tiles-container">
           <div className="tiles-inner-container">
             <div className="number-trash-container">
-              <div className="number"><span>1</span></div>
+              <div className="number"><span>{index+2}</span></div>
               <div className="trash-can"><span><FaTrashAlt onClick={() => removeCards(index)}
 /></span></div>
             </div>
@@ -110,25 +121,18 @@ return (
 const removeCards = (index) => {
   const newFruits = fruits.filter((_, i) => i !== index);
   setFruits(newFruits);
+  console.log(newFruits);
+  setCount(count-1)
   
 };
-const[count,setCount]=useState(0)
-const addCard=()=>{
 
-  setCount(count+1) 
- 
-  setFruits([...fruits,`${count}`])
-  console.log(fruits)
-  console.log(count)
-
-}
 
 const showNewCards = ()=>{
   return(
   fruits.map((fruit, index) => (
     <div key={index}>
       {cardTemaplate(index)} 
-      <div>{fruit}</div>
+      <div></div>
     </div> 
     // <div key={index}>
     //   <button
@@ -145,6 +149,7 @@ const showNewCards = ()=>{
   return(
     
     <div className="create-flashcards-container"> 
+       {/* <Flashcards/> */}
       <Title/>
       <Description/>
       <div className="tes">
