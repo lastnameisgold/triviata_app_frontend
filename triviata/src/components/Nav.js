@@ -30,6 +30,9 @@ export default function Nav() {
                 <Link to="/register">
                     <h3>Register</h3>
                 </Link>
+                <Link to="/signin">
+                    <h3>Sign In</h3>
+                </Link>
                 
 
             </div>
