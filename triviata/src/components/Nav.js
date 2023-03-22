@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export default function Nav({authenticated, user, handleLogOut}) {
+const Nav = ({authenticated, user, handleLogOut}) => {
     let authenticatedOptions
     if (user) {
         authenticatedOptions=(
@@ -46,7 +46,7 @@ export default function Nav({authenticated, user, handleLogOut}) {
                 <Link to="/profile">
                     <span class="material-symbols-rounded">account_circle</span>
                 </Link>
-                
+
                 {/* For testing purposes! Feel free to change link design for register */}
 
                 <Link to="/signin">
@@ -55,8 +55,10 @@ export default function Nav({authenticated, user, handleLogOut}) {
                 <Link to="/register">
                     <h3>Register</h3>
                 </Link>
-                {authenticated && user ? authenticatedOptions : publicOptions}
             </div>
+            {authenticated && user ? authenticatedOptions : publicOptions}
         </div>
     )
 }
+
+export default Nav

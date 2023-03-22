@@ -1,9 +1,13 @@
 import Card from "./Card"
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from "react"
 
 export default function Home({ user, authenticated }) {
-    // let navigate = useNavigate()
+    let navigate = useNavigate()
+
+    const navigateToRegister = () => {
+        navigate('/register')
+    }
     // const [quizzes, setQuizzes] = useState([])
 
     return(user && authenticated) ? (
@@ -50,7 +54,7 @@ export default function Home({ user, authenticated }) {
                     <h1>Ignite Your Curiosity: Discover, Learn, and Quiz!</h1>
                     <p>Discover a world of knowledge, ignite your curiosity, and enhance your learning journey with engaging quizzes and interactive flashcards.</p>
                 </div>
-                <button className="primary-button">Sign up for free</button>
+                <button className="primary-button" onClick={navigateToRegister}>Sign up for free</button>
             </div>
             <div className="features-section">
                 <div className="feature-section">
@@ -58,6 +62,7 @@ export default function Home({ user, authenticated }) {
                     <div className="feature-content">
                         <h3>Lorem ipsum dolor sit amet consectetur. Semper lectus morbi.</h3>
                         <p>Lorem ipsum dolor sit amet consectetur. Aliquet turpis in a nullam et. In ultrices risus pellentesque sapien turpis velit consectetur tempus.</p>
+                        <button className="primary-button" onClick={navigateToRegister}>Sign up for free</button>
                     </div>
                 </div>
 
@@ -65,6 +70,7 @@ export default function Home({ user, authenticated }) {
                     <div className="feature-content">
                         <h3>Lorem ipsum dolor sit amet consectetur. Semper lectus morbi.</h3>
                         <p>Lorem ipsum dolor sit amet consectetur. Aliquet turpis in a nullam et. In ultrices risus pellentesque sapien turpis velit consectetur tempus.</p>
+                        <button className="primary-button" onClick={navigateToRegister}>Sign up for free</button>
                     </div>
                     <img src="https://images.unsplash.com/photo-1618557039181-a3b7e72beeda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80" alt="" />
                 </div>
