@@ -6,8 +6,7 @@ import React, { useState, useEffect } from 'react'
 
 function App() {
 
-  const [authenticated, toggleAuthenticated] = useState(false)
-  const [user, setUser] = useState(null)
+  
 
   return (
     <div className="App">
