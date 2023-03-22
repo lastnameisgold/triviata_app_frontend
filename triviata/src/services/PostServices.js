@@ -1,4 +1,4 @@
-import Client from './api'
+//Need to rename file and change function to whatever page we want protected for logged in users only. - AH
 
 export const GetPosts = async () => {
   try {
