@@ -27,11 +27,12 @@ export default function Nav() {
                 </Link>
                 
                 {/* For testing purposes! Feel free to change link design for register */}
-                <Link to="/register">
-                    <h3>Register</h3>
-                </Link>
+                
                 <Link to="/signin">
                     <h3>Sign In</h3>
+                </Link>
+                <Link to="/register">
+                    <h3>Sign Up</h3>
                 </Link>
                 
 
