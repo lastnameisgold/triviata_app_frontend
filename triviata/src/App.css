@@ -159,6 +159,74 @@
 }
 /* Home */
 
+/* Hero Section */
+.hero-container {
+  background-color: var(--md-sys-color-primary-container);
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 8rem;
+  gap: 2rem;
+}
+
+.hero-content-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.primary-button {
+  font-size: 1rem;
+  font-weight: 600;
+  width: fit-content;
+  color: var(--md-sys-color-on-primary);
+  background-color: var(--md-sys-color-primary);
+  border-style: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+/* Hero Section */
+
+/* Feature Section */
+.features-section {
+  background-color: var(--md-sys-color-surface);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.feature-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.feature-section img {
+  width: 30%;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.feature-content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+/* Feature Section */
+
 /* Create */
 .create-container {
   color: var(--md-sys-color-on-background);
@@ -442,7 +510,7 @@ border-radius: 10px;;
   border-radius:10px;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   flex-direction: column;
 }
 .tiles-container{
@@ -468,7 +536,7 @@ border-radius: 10px;;
   height:40px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   border-bottom: 1.5px black solid;
 }
 .number{
@@ -495,7 +563,7 @@ border-radius: 10px;;
   border-radius:10px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .term-container{
@@ -529,7 +597,7 @@ border-bottom:3px black solid;
   border-radius:10px;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
 }
 
 .inner-add-container{
