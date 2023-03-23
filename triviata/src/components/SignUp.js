@@ -29,26 +29,27 @@ const Register = () => {
       email: '',
       password: '',
       confirmPassword: ''
-    })  
+    })
     navigate('/signin')
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
+    <div className="signin-signup-container">
+        <form className="form-container" onSubmit={handleSubmit}>
+
+          <div className="input-container">
             <label htmlFor="name">Name</label>
             <input
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="John Smith"
+              placeholder="Jon Snow"
               value={formValues.name}
               required
             />
           </div>
-          <div className="input-wrapper">
+
+          <div className="input-container">
             <label htmlFor="email">Email</label>
             <input
               onChange={handleChange}
@@ -60,37 +61,37 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div className="input-container">
             <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               type="password"
-              name="password"
+              name="Password"
+              placeholder="password"
               value={formValues.password}
               required
             />
           </div>
-          <div className="input-wrapper">
+
+          <div className="input-container">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               onChange={handleChange}
               type="password"
               name="confirmPassword"
+              placeholder="confirm password"
               value={formValues.confirmPassword}
               required
             />
           </div>
-          <button
+
+          <button className="primary-button signup-button"
             disabled={
               !formValues.email ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
-            }
-          >
-            Sign Up
-          </button>
+            }>Sign up</button>
         </form>
-      </div>
     </div>
   )
 }
