@@ -56,7 +56,7 @@ const Register = () => {
               onChange={handleChange}
               name="email"
               type="email"
-              placeholder="example@example.com"
+              placeholder="Email Address"
               value={formValues.email}
               required
             />

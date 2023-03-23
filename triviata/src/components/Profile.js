@@ -8,22 +8,33 @@ export default function Profile({user, authenticated}) {
     let navigate = useNavigate()
     const [userProfile, setUserProfile] = useState({})
 
-    useEffect(() => {
-        const handleUser = async () => {
-            const data = await GetUsers()
-            setUserProfile(data[0])
-            console.log(data[0])
-            console.log(userProfile)
-        }
-        handleUser()
-    },[])
+    // useEffect(() => {
+    //     const handleUser = async () => {
+    //         const data = await GetUsers()
+    //         setUserProfile(data[0])
+    //         console.log(data[0])
+    //         console.log(userProfile)
+    //     }
+    //     handleUser()
+    // },[])
 
+    console.log(user)
+   
+    
+    const NavigateToEdit = () => {
+        navigate('/updateUser')
+    }
+
+    
     return(
-        <div>
+        <div >
             <h3>This is the Profile component</h3>
-            <div>
-                <h3>Name: {userProfile.name}</h3>
-                <h3>Email: {userProfile.email}</h3>
+            <div >
+                <h3>Name: {user.name}</h3>
+                <h3>Email: {user.email}</h3>
+                <h3>id: {user.id}</h3>
+
+                <h3>password: {user.passwordDigest}</h3>
                 <button>Edit</button>
 
             </div>
