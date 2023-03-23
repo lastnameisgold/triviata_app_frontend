@@ -16,9 +16,8 @@ export default function Profile({user, authenticated}) {
             console.log(userProfile)
         }
         handleUser()
-    },[])    
-    
-    
+    },[])
+
     return(
         <div>
             <h3>This is the Profile component</h3>
@@ -26,7 +25,7 @@ export default function Profile({user, authenticated}) {
                 <h3>Name: {userProfile.name}</h3>
                 <h3>Email: {userProfile.email}</h3>
                 <button>Edit</button>
-                
+
             </div>
         </div>
     )

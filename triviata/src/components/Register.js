@@ -66,7 +66,7 @@ const Register = () => {
             <input
               onChange={handleChange}
               type="password"
-              name="Password"
+              name="password"
               placeholder="password"
               value={formValues.password}
               required
