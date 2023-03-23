@@ -3,6 +3,8 @@ import Home from "./Home"
 import Create from './Create'
 import Bookmarks from './Bookmarks'
 import Profile from './Profile'
+import SignIn from './SignIn'
+import Register from './Register'
 
 export default function Main() {
     return(
@@ -15,6 +17,11 @@ export default function Main() {
                 <Route path="/bookmarks" element={<Bookmarks />}/>
 
                 <Route path="/profile" element={<Profile />} />
+
+                <Route path="/signin" element={<SignIn />}/>
+
+                <Route path="/register" element={<Register />}/>
+
             </Routes>
         </div>
     )

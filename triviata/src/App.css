@@ -1,3 +1,11 @@
+/* Material Theme */
+@import url(./css/tokens.css);
+@import url(./css/colors.module.css);
+@import url(./css/typography.module.css);
+@import url(./css/theme.light.css) (prefers-color-scheme: light);
+@import url(./css/theme.dark.css) (prefers-color-scheme: dark);
+/* Material Theme */
+
 /* CSS Reset */
 * {
   margin: 0;
@@ -8,12 +16,20 @@
 
 /* Nav */
 .nav-container {
-  background-color: pink;
+  background-color: var(--md-sys-color-surface-variant);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 2rem;
+  padding: 2rem 4rem;
+}
+
+.nav-container a {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.nav-container a:link {
+  text-decoration: none;
 }
 
 .links-container {
@@ -25,7 +41,151 @@
 
 /* Nav */
 
+/* Search Bar */
+.search-bar {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  width: 30rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
 
+.search-input {
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  width: 100%;
+  border-style: none;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+/* Search Bar */
+
+/* Create Button */
+.create-button {
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  border-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+/* Create Button */
+
+/* Material Symbols */
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 600,
+  'GRAD' 0,
+  'opsz' 24
+}
+/* Material Symbols */
+
+/* Card */
+.card-container {
+  background-color: var(--md-sys-color-tertiary-container);
+  color: var(--md-sys-color-on-tertiary-container);
+  min-height: 200px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.creator-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.creator-image-container {
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-rows: repeat(auto);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+
+/* Card */
+
+/* Home */
+.home-container {
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.section-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+/* Home */
+
+/* Footer */
+
+.footer-container {
+  background-color: var(--md-sys-color-surface-variant);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 4rem;
+}
+
+.footer-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-column {
+  width: 33%;
+}
+
+.footer-column li {
+  list-style: none;
+}
+/* Footer */
 
 /*Start of Flashcard container*/
 .flip-in{
@@ -368,7 +528,3 @@ cursor: pointer;
 
 
 /*End of create-tiles container*/
-
-
-
-
