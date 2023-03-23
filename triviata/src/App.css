@@ -341,6 +341,33 @@ body {
   -moz-border-radius: 1rem;
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
+  cursor: pointer;
+}
+
+.create-btn-cont{
+  width: 1000px;
+  height: 115px;
+  display: flex;
+  justify-content: end;
+}
+.create-flash-btn{
+  background-color: rgb(63, 63, 232);
+  color: white;
+  width: 20vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-color: rgb(63, 63, 232);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  cursor: pointer;
+}
+.color{
+  color: white;
 }
 /* Create */
 
@@ -371,6 +398,8 @@ body {
 /* Footer */
 
 /* Start of Flashcard container */
+
+
 .flip-in{
 background-color: blueviolet;
 }
@@ -404,9 +433,6 @@ background-color: blueviolet;
   align-items: center;
   cursor: pointer;
   transition: ease-in-out 400ms;
-
-
-}
 
 }
 
@@ -490,6 +516,10 @@ border-radius: 10px;;
 /* End of Flashcard container */
 
 /* Start of createFlashCards container */
+
+.flashcard-header{
+  color: aliceblue;
+}
 .create-flashcards-container{
   display: flex;
   flex-direction: column;

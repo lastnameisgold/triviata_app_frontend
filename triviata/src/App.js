@@ -7,6 +7,7 @@ import Bookmarks from './components/Bookmarks'
 import Profile from './components/Profile'
 import SignIn from './components/SignIn'
 import SignUp from './components/Register'
+import CreateFlashCards from './components/CreateFlashcards';
 import React, { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 import { Routes, Route } from 'react-router-dom'
@@ -64,6 +65,8 @@ function App() {
                     />}/>
 
             <Route path="/register" element={<SignUp />}/>
+            <Route path="/CreateFlashCards" element={<CreateFlashCards />}/>
+
 
           </Routes>
       </main>
