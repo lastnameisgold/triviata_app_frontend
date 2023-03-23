@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom"
 
-export default function Nav() {
-    return(
+const Nav = ({authenticated, user}) => {
+    return(user && authenticated) ? (
         <div className="nav-container">
             <Link to="/">
                 <h1>Triviata</h1>
             </Link>
-            
+
             <div className="search-bar">
                 <span className="material-symbols-rounded">search</span>
                 <input className="search-input" placeholder="Search for quizzes, flashcards, topics"/>
@@ -25,14 +25,31 @@ export default function Nav() {
                 <Link to="/profile">
                     <span class="material-symbols-rounded">account_circle</span>
                 </Link>
-                
-                {/* For testing purposes! Feel free to change link design for register */}
-                <Link to="/register">
-                    <h3>Register</h3>
-                </Link>
-                
-
             </div>
         </div>
+    ) : (
+        <div className="nav-container">
+        <Link to="/">
+            <h1>Triviata</h1>
+        </Link>
+
+        <div className="search-bar">
+            <span className="material-symbols-rounded">search</span>
+            <input className="search-input" placeholder="Search for quizzes, flashcards, topics"/>
+        </div>
+
+        <div className="links-container">
+
+            <Link to="/signin">
+                <button className="link-button">Sign in</button>
+            </Link>
+            <Link to="/register">
+                <button className="primary-button">Register</button>
+            </Link>
+        </div>
+    </div>
     )
+
 }
+
+export default Nav
