@@ -34,48 +34,50 @@ const Register = () => {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+    <div className="signup-container">
+      <h3 className="input-wrapper">Sign Up</h3>
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name"></label>
             <input
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="John Smith"
+              placeholder="Name"
               value={formValues.name}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email"></label>
             <input
               onChange={handleChange}
               name="email"
               type="email"
-              placeholder="example@example.com"
+              placeholder="Email Address"
               value={formValues.email}
               required
             />
           </div>
 
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password"></label>
             <input
               onChange={handleChange}
               type="password"
               name="password"
+              placeholder="Password"
               value={formValues.password}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="confirmPassword">Confirm Password</label>
+            <label htmlFor="confirmPassword"></label>
             <input
               onChange={handleChange}
               type="password"
               name="confirmPassword"
+              placeholder="Confirm Password"
               value={formValues.confirmPassword}
               required
             />
@@ -90,7 +92,6 @@ const Register = () => {
             Sign Up
           </button>
         </form>
-      </div>
     </div>
   )
 }

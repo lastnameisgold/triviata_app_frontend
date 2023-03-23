@@ -6,6 +6,7 @@ import Bookmarks from './Bookmarks'
 import Profile from './Profile'
 import SignIn from './SignIn'
 import Register from './Register'
+import EditUser from './UpdateUser'
 // import { CheckSession } from './services/Auth'
 
 export default function Main() {
@@ -50,6 +51,12 @@ export default function Main() {
                     />}/>
 
                 <Route path="/register" element={<Register />}/>
+
+                <Route path="/updateUser" element=
+                    {<EditUser 
+                        user={user} 
+                        authenticated={authenticated}/>
+                    }/>
 
             </Routes>
         </div>

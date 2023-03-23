@@ -22,26 +22,27 @@ const SignIn = (props) => {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+    <div className="signin-container">
+      <h3 className="input-wrapper">Sign In</h3>
         <form className="col" onSubmit={handleSubmit}>
           <div className="input-wrapper">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email"></label>
             <input
               onChange={handleChange}
               name="email"
               type="email"
-              placeholder="example@example.com"
+              placeholder="Email Address"
               value={formValues.email}
               required
             />
           </div>
           <div className="input-wrapper">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password"></label>
             <input
               onChange={handleChange}
               type="password"
               name="password"
+              placeholder="Password"
               value={formValues.password}
               required
             />
@@ -50,7 +51,6 @@ const SignIn = (props) => {
             Sign In
           </button>
         </form>
-      </div>
     </div>
   )
 }

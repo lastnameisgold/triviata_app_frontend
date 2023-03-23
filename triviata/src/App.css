@@ -632,3 +632,40 @@ border-bottom:3px black solid;
   cursor: pointer;
 }
 /*End of create-tiles container*/
+
+/* Sign Up, Sign In, & update forms start*/
+.signup-container, .signin-container, .update-user-container{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vw;
+  padding: 15px;
+}
+form,
+.input-wrapper {
+  margin: auto;
+  width: 100%;
+  font-size: 1.5rem;
+}
+.input-wrapper input {
+  padding: 0.6em 1.2em;
+  margin: 0.7em auto;
+  width: 100%;
+  border-color: var(--primary-bg);
+  font-size: 1.1rem;
+  outline: none;
+}
+form button {
+  margin: 1em 0;
+  color: var(--link-color-secondary);
+  align-self: center;
+  width: 100%;
+  padding: 0.6em 1.2em;
+  font-size: 1rem;
+  border-radius:  40px 40px 40px 40px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+}
+form button:hover {
+  opacity: 0.7;
+}
+/* Sign Up & Sign In forms end*/
