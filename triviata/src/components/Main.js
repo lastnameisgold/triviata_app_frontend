@@ -5,7 +5,7 @@ import Create from './Create'
 import Bookmarks from './Bookmarks'
 import Profile from './Profile'
 import SignIn from './SignIn'
-import SignUp from './SignUp'
+import SignUp from './Register'
 // import { CheckSession } from './services/Auth'
 
 export default function Main() {
@@ -13,7 +13,7 @@ export default function Main() {
     const [authenticated, toggleAuthenticated] = useState(false)
     const [user, setUser] = useState(null)
 
-    //Used to allow persistant logging in - Not currently working
+    // Used to allow persistant logging in - Not currently working
         // const checkToken = async () => {
         //     const user = await CheckSession()
         //     setUser(user)
@@ -31,7 +31,7 @@ export default function Main() {
     return(
         <div className='main'>
             <Routes>
-                <Route path="/" element={<Home />}/>
+                <Route path="/" element={<Home user={user} authenticated={authenticated} />}/>
 
                 <Route path="/create" element={<Create />}/>
 
@@ -49,7 +49,7 @@ export default function Main() {
                         toggleAuthenticated={toggleAuthenticated}
                     />}/>
 
-                <Route path="/signup" element={<SignUp />}/>
+                <Route path="/register" element={<SignUp />}/>
 
             </Routes>
         </div>

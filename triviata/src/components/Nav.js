@@ -43,8 +43,8 @@ const Nav = ({authenticated, user}) => {
             <Link to="/signin">
                 <button className="link-button">Sign in</button>
             </Link>
-            <Link to="/signup">
-                <button className="primary-button">Sign up</button>
+            <Link to="/register">
+                <button className="primary-button">Register</button>
             </Link>
         </div>
     </div>
