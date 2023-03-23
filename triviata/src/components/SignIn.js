@@ -24,6 +24,7 @@ const SignIn = (props) => {
   return (
     <div className="signin-signup-container">
         <form className="form-container" onSubmit={handleSubmit}>
+          <h2>Sign In</h2>
           <div className="input-container">
             <label htmlFor="email">Email</label>
             <input
