@@ -21,7 +21,7 @@ export default function Profile({user, authenticated}) {
     console.log(user)
    
     
-    const NavigateToEdit = () => {
+    const NavigateToUpdate = () => {
         navigate('/updateUser')
     }
 
@@ -35,7 +35,7 @@ export default function Profile({user, authenticated}) {
                 <h3>id: {user.id}</h3>
 
                 <h3>password: {user.passwordDigest}</h3>
-                <button>Edit</button>
+                <button onClick={NavigateToUpdate}>Edit</button>
 
             </div>
         </div>
