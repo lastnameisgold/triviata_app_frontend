@@ -1,6 +1,11 @@
+import Client from './services/api.js'
+
 import { useEffect, useState, React } from 'react';
+import axios from 'axios';
 import { createElement } from 'react'
 import { FaTrashAlt } from 'react-icons/fa';
+import Flashcards from './Flashcards.jsx';
+import { BASE_URL } from '../services/api.js';
 
 import Description from "./Description.jsx"
 import Title from "./Title.jsx"
@@ -71,23 +76,46 @@ function removeDiv(e){
 // let mainContainer = createElement("div", { className: "contexCon" },elements);
 
 
-  const createCard = ()=>{
-    let divOG = document.querySelector(".tes");
-    let divNew = document.querySelector(".create-tiles-container")
-    divOG.appendChild(divNew.cloneNode(true));
-  }
+  // const createCard = ()=>{
+  //   let divOG = document.querySelector(".tes");
+  //   let divNew = document.querySelector(".create-tiles-container")
+  //   divOG.appendChild(divNew.cloneNode(true));
+  // }
 
   const [fruits, setFruits] = useState([
-    'test1'
   ]);
+  const[count,setCount]=useState(1)
+const addCard=()=>{
+
+  setCount(count+1) 
+ 
+  setFruits([...fruits,count])
+  console.log(fruits)
+  console.log(count)
+
+}
+
+const createFlashcard = async (term, answer) => {
+  try {
+    const response = axios.post(`${BASE_URL}/api/flashcards/create`,(req,res)=>{ 
+      res.send({'first-pg':'This is about page',
+    'last-pg':'This is about page'})})
+    console.log(response) //should log the newly created flashcard
+
+  } catch (error) {
+    throw error
+  }
+}
+
 
   const cardTemaplate = (index)=>{
 return (
   <div key={index} className="create-tiles-container">
+ 
         <div className="tiles-container">
           <div className="tiles-inner-container">
             <div className="number-trash-container">
-              <div className="number"><span>1</span></div>
+              <div className="number"><span>{index+2}</span></div>
               <div className="trash-can"><span><FaTrashAlt onClick={() => removeCards(index)}
 /></span></div>
             </div>
@@ -110,25 +138,18 @@ return (
 const removeCards = (index) => {
   const newFruits = fruits.filter((_, i) => i !== index);
   setFruits(newFruits);
+  console.log(newFruits);
+  setCount(count-1)
   
 };
-const[count,setCount]=useState(0)
-const addCard=()=>{
 
-  setCount(count+1) 
- 
-  setFruits([...fruits,`${count}`])
-  console.log(fruits)
-  console.log(count)
-
-}
 
 const showNewCards = ()=>{
   return(
   fruits.map((fruit, index) => (
     <div key={index}>
       {cardTemaplate(index)} 
-      <div>{fruit}</div>
+      <div></div>
     </div> 
     // <div key={index}>
     //   <button
@@ -141,10 +162,81 @@ const showNewCards = ()=>{
   ))
   )
 }
+const [formValues, setFormValues] = useState({term: '', answer: '',likes: 0})
+
+  const handleChange = (e) => {
+    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    const p = await SignInUser(formValues)
+console.log(formValues)
+
+    setFormValues({term: '', asnwer: '', likes:0})
+
+}
+
+
+
+const SignInUser = async (data) => {
+  try {
+    const res = await Client.post('/api/flashcards/create', data)
+    // Set the current signed in users token to localStorage
+    // localStorage.setItem('token',res.data.token)
+    console.log(res.data.user)
+  } catch (error) {
+    throw error
+  }
+}
 
   return(
     
     <div className="create-flashcards-container"> 
+ <div className="signin col">
+      <div className="card-overlay centered">
+        <form className="col" onSubmit={handleSubmit}>
+          <div className="input-wrapper">
+            <label htmlFor="input">term</label>
+            <input
+              onChange={handleChange}
+              type="input"
+              name="term"
+              value={formValues.term}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="input">answer</label>
+            <input
+              onChange={handleChange}
+              type="ipnut"
+              name="answer"
+              value={formValues.answer}
+              required
+            />
+          </div>
+          <div className="input-wrapper">
+            <label htmlFor="input">likes</label>
+            <input
+              onChange={handleChange}
+              type="ipnut"
+              name="likes"
+              value={formValues.likes}
+              required
+            />
+          </div>
+          <button disabled={!formValues.term || !formValues.answer}>
+            Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+<div>
+    <button onClick={()=>{createFlashcard('What is the capital of Iowa?', 'Des Moines')}}>Test Create Flashcard Function</button>
+  </div>
+
+       {/* <Flashcards/> */}
       <Title/>
       <Description/>
       <div className="tes">
