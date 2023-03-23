@@ -29,27 +29,28 @@ const Register = () => {
       email: '',
       password: '',
       confirmPassword: ''
-    })  
+    })
     navigate('/signin')
   }
 
   return (
-    <div className="signup-container">
-      <h3 className="input-wrapper">Sign Up</h3>
-        <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <label htmlFor="name"></label>
+    <div className="signin-signup-container">
+        <form className="form-container" onSubmit={handleSubmit}>
+
+          <div className="input-container">
+            <label htmlFor="name">Name</label>
             <input
               onChange={handleChange}
               name="name"
               type="text"
-              placeholder="Name"
+              placeholder="Jon Snow"
               value={formValues.name}
               required
             />
           </div>
-          <div className="input-wrapper">
-            <label htmlFor="email"></label>
+
+          <div className="input-container">
+            <label htmlFor="email">Email</label>
             <input
               onChange={handleChange}
               name="email"
@@ -60,37 +61,36 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
-            <label htmlFor="password"></label>
+          <div className="input-container">
+            <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="password"
               value={formValues.password}
               required
             />
           </div>
-          <div className="input-wrapper">
-            <label htmlFor="confirmPassword"></label>
+
+          <div className="input-container">
+            <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               onChange={handleChange}
               type="password"
               name="confirmPassword"
-              placeholder="Confirm Password"
+              placeholder="confirm password"
               value={formValues.confirmPassword}
               required
             />
           </div>
-          <button
+
+          <button className="primary-button signup-button"
             disabled={
               !formValues.email ||
               (!formValues.password &&
                 formValues.confirmPassword === formValues.password)
-            }
-          >
-            Sign Up
-          </button>
+            }>Sign up</button>
         </form>
     </div>
   )

@@ -1,9 +1,16 @@
 import './App.css';
 import Nav from './components/Nav';
-import Main from './components/Main';
 import Footer from './components/Footer'
+import Home from "./components/Home"
+import Create from './components/Create'
+import Bookmarks from './components/Bookmarks'
+import Profile from './components/Profile'
+import SignIn from './components/SignIn'
+import SignUp from './components/Register'
 import React, { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
+import { Routes, Route } from 'react-router-dom'
+
 
 function App() {
   const [authenticated, toggleAuthenticated] = useState(false)
@@ -36,7 +43,30 @@ function App() {
         user={user}
         handleLogOut={handleLogOut}
       />
-      <Main />
+      <main>
+        <Routes>
+            <Route path="/" element={<Home user={user} authenticated={authenticated} />}/>
+
+            <Route path="/create" element={<Create />}/>
+
+                <Route path="/bookmarks" element={<Bookmarks />}/>
+
+                <Route path="/profile" element=
+                    {<Profile 
+                        user={user} 
+                        authenticated={authenticated}
+                    />} />
+
+                <Route path="/signin" element=
+                    {<SignIn 
+                        setUser={setUser}
+                        toggleAuthenticated={toggleAuthenticated}
+                    />}/>
+
+            <Route path="/register" element={<SignUp />}/>
+
+          </Routes>
+      </main>
       <Footer />
     </div>
   );

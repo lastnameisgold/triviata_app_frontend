@@ -1,28 +1,7 @@
 import { Link } from "react-router-dom"
 
-const Nav = ({authenticated, user, handleLogOut}) => {
-    let authenticatedOptions
-    if (user) {
-        authenticatedOptions=(
-            <nav>
-            <h3>Welcome {user.email}!</h3>
-            <Link to="/feed">Feed</Link>
-            <Link onClick={handleLogOut} to="/">
-              Sign Out
-            </Link>
-          </nav>
-        )
-    }
-
-    const publicOptions = (
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/register">Register</Link>
-          <Link to="/signin">Sign In</Link>
-        </nav>
-      )
-
-    return(
+const Nav = ({authenticated, user}) => {
+    return(user && authenticated) ? (
         <div className="nav-container">
             <Link to="/">
                 <h1>Triviata</h1>
@@ -46,19 +25,31 @@ const Nav = ({authenticated, user, handleLogOut}) => {
                 <Link to="/profile">
                     <span class="material-symbols-rounded">account_circle</span>
                 </Link>
-
-                {/* For testing purposes! Feel free to change link design for register */}
-
-                <Link to="/signin">
-                    <h3>Sign In</h3>
-                </Link>
-                <Link to="/register">
-                    <h3>Register</h3>
-                </Link>
             </div>
-            {authenticated && user ? authenticatedOptions : publicOptions}
         </div>
+    ) : (
+        <div className="nav-container">
+        <Link to="/">
+            <h1>Triviata</h1>
+        </Link>
+
+        <div className="search-bar">
+            <span className="material-symbols-rounded">search</span>
+            <input className="search-input" placeholder="Search for quizzes, flashcards, topics"/>
+        </div>
+
+        <div className="links-container">
+
+            <Link to="/signin">
+                <button className="link-button">Sign in</button>
+            </Link>
+            <Link to="/register">
+                <button className="primary-button">Register</button>
+            </Link>
+        </div>
+    </div>
     )
+
 }
 
 export default Nav

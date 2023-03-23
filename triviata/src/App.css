@@ -14,6 +14,12 @@
 }
 /* CSS Reset */
 
+/* Body */
+body {
+  background-color: var(--md-sys-color-background);
+}
+/* Body */
+
 /* Nav */
 .nav-container {
   background-color: var(--md-sys-color-surface-variant);
@@ -36,7 +42,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 2rem
+  gap: 0.5rem;
 }
 
 /* Nav */
@@ -161,6 +167,7 @@
 
 /* Hero Section */
 .hero-container {
+  color: var(--md-sys-color-on-primary-container);
   background-color: var(--md-sys-color-primary-container);
   height: 50vh;
   display: flex;
@@ -191,10 +198,42 @@
   -ms-border-radius: 2rem;
   -o-border-radius: 2rem;
 }
+
+.tonal-button {
+  font-size: 1rem;
+  font-weight: 600;
+  width: fit-content;
+  color: var(--md-sys-color-on-primary-container);
+  background-color: var(--md-sys-color-primary-container);
+  border-style: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+.link-button {
+  font-size: 1rem;
+  font-weight: 600;
+  width: fit-content;
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: transparent;
+  border-style: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
 /* Hero Section */
 
 /* Feature Section */
 .features-section {
+  color: var(--md-sys-color-on-surface);
   background-color: var(--md-sys-color-surface);
   padding: 4rem;
   display: flex;
@@ -226,6 +265,50 @@
   gap: 0.5rem;
 }
 /* Feature Section */
+
+/* Sign In / Sign Up */
+
+.signin-signup-container {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--md-sys-color-on-background);
+  background-color: var(--md-sys-color-background);
+}
+
+.input-container {
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 1rem;
+  border-style: none;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.signin-button, .signup-button {
+  width: 20vw;
+}
+
+.form-container {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+/* Sign In / Sign Up */
 
 /* Create */
 .create-container {

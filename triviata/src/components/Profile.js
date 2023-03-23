@@ -16,6 +16,8 @@ export default function Profile({user, authenticated}) {
             console.log(userProfile)
         }
         handleUser()
+    },[])
+
     },[])    
     
     const NavigateToEdit = () => {
@@ -29,8 +31,8 @@ export default function Profile({user, authenticated}) {
             <div >
                 <h3>Name: {userProfile.name}</h3>
                 <h3>Email: {userProfile.email}</h3>
-                <button onClick={NavigateToEdit}>Edit</button>
-                
+                <button>Edit</button>
+
             </div>
         </div>
     )

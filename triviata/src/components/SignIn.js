@@ -22,11 +22,10 @@ const SignIn = (props) => {
   }
 
   return (
-    <div className="signin-container">
-      <h3 className="input-wrapper">Sign In</h3>
-        <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
-            <label htmlFor="email"></label>
+    <div className="signin-signup-container">
+        <form className="form-container" onSubmit={handleSubmit}>
+          <div className="input-container">
+            <label htmlFor="email">Email</label>
             <input
               onChange={handleChange}
               name="email"
@@ -36,19 +35,19 @@ const SignIn = (props) => {
               required
             />
           </div>
-          <div className="input-wrapper">
-            <label htmlFor="password"></label>
+          <div className="input-container">
+            <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
               type="password"
               name="password"
-              placeholder="Password"
+              placeholder="password"
               value={formValues.password}
               required
             />
           </div>
-          <button disabled={!formValues.email || !formValues.password}>
-            Sign In
+          <button className="primary-button signin-button" disabled={!formValues.email || !formValues.password}>
+            Sign in
           </button>
         </form>
     </div>
