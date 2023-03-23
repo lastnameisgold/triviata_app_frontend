@@ -7,6 +7,7 @@ export default function Create() {
                 <div className="create-option"><h3>Create quiz</h3></div>
                 <div className="create-option"><h3>Create flashcards</h3></div>
             </div>
+
         </div>
     )
 }
