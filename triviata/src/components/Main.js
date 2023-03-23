@@ -5,7 +5,7 @@ import Create from './Create'
 import Bookmarks from './Bookmarks'
 import Profile from './Profile'
 import SignIn from './SignIn'
-import Register from './Register'
+import SignUp from './SignUp'
 // import { CheckSession } from './services/Auth'
 
 export default function Main() {
@@ -49,7 +49,7 @@ export default function Main() {
                         toggleAuthenticated={toggleAuthenticated}
                     />}/>
 
-                <Route path="/register" element={<Register />}/>
+                <Route path="/signup" element={<SignUp />}/>
 
             </Routes>
         </div>
