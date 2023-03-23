@@ -26,8 +26,9 @@ const Nav = ({authenticated, user, handleLogOut}) => {
                     <span class="material-symbols-rounded">account_circle</span>
                 </Link>
                 <Link to="/" onClick={handleLogOut}>
-                    <button>
+                    <button className="link-button">
                         Logout
+                        <span class="material-symbols-rounded">logout</span>
                     </button>
                 </Link>
             </div>

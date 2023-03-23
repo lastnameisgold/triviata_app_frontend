@@ -42,7 +42,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 /* Nav */
@@ -218,10 +218,14 @@ body {
   font-size: 1rem;
   font-weight: 600;
   width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
   color: var(--md-sys-color-on-surface-variant);
   background-color: transparent;
   border-style: none;
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 2rem;
   -webkit-border-radius: 2rem;
   -moz-border-radius: 2rem;
@@ -389,8 +393,6 @@ background-color: blueviolet;
   transition: ease-in-out 400ms;
   animation: flipIn-flashcards-container .25s ease-in-out 1;
   animation-fill-mode: forwards;
-
-
 }
 
 .flashcards{
