@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { UpdateUser } from '../services/UserServices'
 import { useNavigate } from 'react-router-dom'
 
-const EditUser = () => {
+const UpdateUser = () => {
     
     let navigate = useNavigate()
 
@@ -25,11 +24,11 @@ const EditUser = () => {
     
     
     return (
-        <div className='update-user-container'>
-            <h3 className="input-wrapper">Edit User Information</h3>
-            <form onSubmit={handleSubmit}>
-                <div className="input-wrapper">
-                    <label htmlFor="name"></label>
+        <div className='signin-signup-container'> 
+            <form className="form-container" onSubmit={handleSubmit}>
+                <h2 >Edit User Information</h2>
+                <div className="input-container">
+                    <label htmlFor="name">Name</label>
                     <input 
                         onChange={handleChange}
                         name="name"
@@ -39,7 +38,7 @@ const EditUser = () => {
                         required
                     />
                 </div>
-                <div className="input-wrapper">
+                <div className="input-container">
                     <label htmlFor="email">Email</label>
                     <input 
                         onChange={handleChange}
@@ -50,7 +49,7 @@ const EditUser = () => {
                         required
                     />
                 </div>
-                <button>Submit Changes</button>
+                <button className="primary-button signup-button">Submit Changes</button>
 
             </form>
         </div>
@@ -61,4 +60,4 @@ const EditUser = () => {
 
 }
 
-export default EditUser
+export default UpdateUser

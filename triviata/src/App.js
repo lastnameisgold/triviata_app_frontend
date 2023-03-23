@@ -6,7 +6,8 @@ import Create from './components/Create'
 import Bookmarks from './components/Bookmarks'
 import Profile from './components/Profile'
 import SignIn from './components/SignIn'
-import SignUp from './components/Register'
+import Register from './components/Register'
+import UpdateUser from './components/UpdateUser'
 import CreateFlashCards from './components/CreateFlashcards';
 import React, { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
@@ -52,21 +53,22 @@ function App() {
 
             <Route path="/create" element={<Create />}/>
 
-                <Route path="/bookmarks" element={<Bookmarks />}/>
+            <Route path="/bookmarks" element={<Bookmarks />}/>
 
-                <Route path="/profile" element=
-                    {<Profile 
-                        user={user} 
-                        authenticated={authenticated}
-                    />} />
+            <Route path="/profile" element=
+                {<Profile 
+                    user={user} 
+                    authenticated={authenticated}
+                />} />
 
-                <Route path="/signin" element=
-                    {<SignIn 
-                        setUser={setUser}
-                        toggleAuthenticated={toggleAuthenticated}
-                    />}/>
-
-            <Route path="/register" element={<SignUp />}/>
+            <Route path="/signin" element=
+                {<SignIn 
+                    setUser={setUser}
+                    toggleAuthenticated={toggleAuthenticated}
+                />}/>
+            <Route path="/updateUser" element={<UpdateUser />}/>
+            <Route path="/register" element={<Register />}/>
+            
             <Route path="/CreateFlashCards" element={<CreateFlashCards />}/>
 
 
