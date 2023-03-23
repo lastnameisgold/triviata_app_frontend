@@ -305,12 +305,20 @@ body {
 }
 
 .form-container {
+  color: var(--md-sys-color-on-surface-variant);
+  background-color: var(--md-sys-color-surface-variant);
+  padding: 2rem;
   font-size: 0.75rem;
   text-transform: uppercase;
   font-weight: 600;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 /* Sign In / Sign Up */
 
