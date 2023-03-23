@@ -11,6 +11,8 @@ export default function Flashcards() {
 
   const [flashcardInfo, setFlashcardInfo] = useState(null);
 
+  const currentFlashcard = flashcardInfo[currentIndex];
+
   const showDef = () => {
     setHidden(!hidden);
   };
@@ -21,13 +23,11 @@ export default function Flashcards() {
   };
 
   const handleNext = () => {
-
     setCurrentIndex((currentIndex + 1) % flashcardInfo.length);
     setFlip(false);
   };
 
   const handlePrev = () => {
-    setHidden(hidden)
     setCurrentIndex((currentIndex - 1 + flashcardInfo.length) % flashcardInfo.length);
     setFlip(false);
   };
@@ -44,12 +44,10 @@ export default function Flashcards() {
     return <div>Loading...</div>;
   }
 
-  const currentFlashcard = flashcardInfo[currentIndex];
-
   return (
-    <div className={name} onClick={() => { showDef(); doFlip(); }}>
+    <div className={name} onClick={() => { showDef() }}>
       <div className="flashcards-map">
-        <div key={currentFlashcard.id} className="flashcards" hidden={hidden ? true : false}>
+        <div key={currentFlashcard.id} className="flashcards">
           <div className="flashcards-inner-container">
             <div className="flashcard-number"><span>{currentIndex + 1}/{flashcardInfo.length}</span></div>
             <div className="term-container">
