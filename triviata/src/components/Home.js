@@ -8,7 +8,6 @@ export default function Home({ user, authenticated }) {
     const navigateToRegister = () => {
         navigate('/register')
     }
-    // const [quizzes, setQuizzes] = useState([])
 
     return(user && authenticated) ? (
         <div className="home-container">
