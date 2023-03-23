@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 
 const SignIn = (props) => {
 
+  // let UserEmail = ''
   let navigate = useNavigate()
 
   const [formValues, setFormValues] = useState({ email: '', password: '' })
@@ -15,6 +16,8 @@ const SignIn = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
+    // UserEmail = formValues.email
+    // console.log(UserEmail)
     setFormValues({email: '', password: ''})
     props.setUser(payload)
     props.toggleAuthenticated(true)
@@ -55,3 +58,4 @@ const SignIn = (props) => {
 }
 
 export default SignIn
+
