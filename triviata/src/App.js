@@ -63,10 +63,15 @@ function App() {
 
             <Route path="/signin" element=
                 {<SignIn 
+                    user={user} 
                     setUser={setUser}
                     toggleAuthenticated={toggleAuthenticated}
                 />}/>
-            <Route path="/updateUser" element={<UpdateUser />}/>
+            <Route path="/updateUser" element=
+                {<UpdateUser 
+                  setUser={setUser}
+                  toggleAuthenticated={toggleAuthenticated}
+                />}/>
             <Route path="/register" element={<Register />}/>
             
             <Route path="/CreateFlashCards" element={<CreateFlashCards />}/>

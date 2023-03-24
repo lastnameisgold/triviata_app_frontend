@@ -1,24 +1,32 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { UpdateUserInfo } from '../services/UserServices'
 
-const UpdateUser = () => {
+const UpdateUser = ({user}) => {
     
     let navigate = useNavigate()
 
-    const [formValues, setFormValues] = useState({ name: '', email: '' })
+    const [formValues, setFormValues] = useState({ 
+        name: '', 
+        email: '' 
+    })
 
     const handleChange = (e) => {
         setFormValues({...formValues, [e.target.name]: e.target.value})
         
     }
-
+    // console.log(users)
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const payload = await UpdateUser({
-            name: formValues.name,
-            email: formValues.email,
-          })
-        setFormValues({name: '', password: ''})
+        await UpdateUserInfo(
+            formValues
+            // name: formValues.name,
+            // email: formValues.email
+        )
+          console.log(formValues.email)
+        setFormValues({
+            name: '', 
+            email: ''})
         navigate('/profile')
     }
     
