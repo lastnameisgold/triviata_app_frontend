@@ -74,6 +74,7 @@ function App() {
                   user={user}
                   setUser={setUser}
                   toggleAuthenticated={toggleAuthenticated}
+                  handleLogOut={handleLogOut}
                 />}/>
           <Route path="/register" element={<Register />}/>
           <Route path="/CreateFlashCards" element={<CreateFlashCards />} />

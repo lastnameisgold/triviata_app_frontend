@@ -12,11 +12,11 @@ export const UpdateUserInfo = async (id, data) => {
   }
 }
 
-export const DeleteUserAccount = async ( data) => {
-  // try{
-  //   const res = await Client.delete(`/api/users/${email}`, data)
-  //   return res.data
-  // } catch (error) {
-  //   throw error
-  // }
+export const DeleteUserAccount = async ( id) => {
+  try{
+    const res = await Client.delete(`/api/users/delete/${id}`)
+    return res.data
+  } catch (error) {
+    throw error
+  }
 }

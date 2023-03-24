@@ -885,3 +885,20 @@ border-bottom:3px black solid;
   cursor: pointer;
 }
 /*End of create-tiles container*/
+
+/* Delete User Profile */
+.delete-button {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-primary);
+  background-color: var(--md-sys-color-error);
+  border-style: none;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+  width: 20vw;
+}
+/* Delete User Profile */

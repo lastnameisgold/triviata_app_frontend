@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { UpdateUserInfo } from '../services/UserServices'
+import { UpdateUserInfo, DeleteUserAccount } from '../services/UserServices'
 
-const UpdateUser = ({setUser,user}) => {
+
+const UpdateUser = ({setUser,user, handleLogOut}) => {
     
 
     let navigate = useNavigate()
@@ -33,6 +34,13 @@ const UpdateUser = ({setUser,user}) => {
         
         navigate('/profile')
     }
+
+    const deleteUser = async (e) => {
+        e.preventDefault()
+        await DeleteUserAccount(user.id)
+        handleLogOut()
+        navigate('/')
+    }
     
     
     return (
@@ -62,8 +70,9 @@ const UpdateUser = ({setUser,user}) => {
                     />
                 </div>
                 <button className="primary-button signup-button">Submit Changes</button>
-
+                <button className="delete-button" onClick={deleteUser}>Delete User Profile</button>
             </form>
+            
         </div>
 
     )
