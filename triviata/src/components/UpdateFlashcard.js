@@ -41,11 +41,13 @@ export default function UpdateFlashcard() {
     setEditingId(null);
   };
 
-  const handleDelete = async (flashcardId) => {
+  const handleDelete = async (flashcardInfo) => {
     try {
-      await axios.delete(`${BASE_URL}/api/flashcards/${flashcardId}`);
+      console.log(typeof flashcardInfo.id)
+      await axios.delete(`${BASE_URL}/api/flashcards/${flashcardInfo.id}`);
 
-      console.log(`Deleted flashcard with ID ${flashcardId}`);
+
+      console.log(`Deleted flashcard with ID ${flashcardInfo.id}`);
 
       const response = await axios.get(`${BASE_URL}/api/flashcards/view`);
       setFlashcardInfo(response.data);
@@ -89,7 +91,6 @@ export default function UpdateFlashcard() {
                   Edit
                 </button>
                 <button onClick={() => {
-                  console.log(flashcard.id);
                   handleDelete(flashcard.id)
                 }}>
                   Delete
