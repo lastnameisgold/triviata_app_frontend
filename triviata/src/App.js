@@ -13,6 +13,7 @@ import React, { useState, useEffect } from 'react'
 import { CheckSession } from './services/Auth'
 import { Routes, Route } from 'react-router-dom'
 import Flashcards from './components/Flashcards';
+import UpdateFlashcard from './components/UpdateFlashcard';
 
 
 function App() {
@@ -72,6 +73,7 @@ function App() {
 
           <Route path="/CreateFlashCards" element={<CreateFlashCards />} />
           <Route path="/flashcards" element={<Flashcards />} />
+          <Route path="/update-flashcards" element={<UpdateFlashcard />} />
 
 
         </Routes>
