@@ -10,9 +10,9 @@ export default function Footer() {
                 <div className="footer-column">
                     <h3>Link and resources</h3>
                     <ul>
-                        <li>Frontend GitHub repo</li>
-                        <li>Backend GitHub repo</li>
-                        <li>Material Theme Builder</li>
+                        <li> <a className="hyperlink" href="https://github.com/lastnameisgold/triviata_app_frontend" target="_blank" style={{textDecoration:'none', color: 'var(--md-sys-color-on-background)'}}>Frontend GitHub repo</a></li>
+                        <li><a href="https://github.com/lastnameisgold/triviata_app_backend" target="_blank" style={{textDecoration:'none', color: 'var(--md-sys-color-on-background)'}}>Backend GitHub repo</a></li>
+                        <li><a href="https://m3.material.io/theme-builder#/dynamic" target="_blank" style={{textDecoration:'none', color: 'var(--md-sys-color-on-background)'}}>Material Theme Builder</a></li>
                     </ul>
                 </div>
 
