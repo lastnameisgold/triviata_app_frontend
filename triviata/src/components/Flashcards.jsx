@@ -64,11 +64,16 @@ export default function Flashcards() {
             </div>
 
             <div className="prev-next-container">
-              <div className="prev-card" onClick={handlePrev}><span>←</span></div>
+              <div className="prev-card" onClick={handlePrev}>
+                <span class="material-symbols-rounded">arrow_back</span>
+              </div>
 
               <div className="flip-card" onClick={doFlip}><h4>View answer</h4></div>
 
-              <div className="next-card" onClick={handleNext}><span>→</span></div>
+              <div className="next-card" onClick={handleNext}>
+                <span class="material-symbols-rounded">arrow_forward</span>
+              </div>
+
             </div>
 
           </div>
