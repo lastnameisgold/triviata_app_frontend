@@ -57,19 +57,21 @@ function App() {
 
           <Route path="/bookmarks" element={<Bookmarks />} />
 
-          <Route path="/profile" element=
-            {<Profile
-              user={user}
-              authenticated={authenticated}
-            />} />
-          <Route path="/signin" element=
-              {<SignIn 
-                  user={user} 
-                  setUser={setUser}
-                  toggleAuthenticated={toggleAuthenticated}
+            <Route path="/profile" element=
+                {<Profile 
+                    user={user} 
+                    authenticated={authenticated}
+                />} />
+
+            <Route path="/signin" element=
+                {<SignIn 
+                    user={user} 
+                    setUser={setUser}
+                    toggleAuthenticated={toggleAuthenticated}
                 />}/>
-          <Route path="/updateUser" element=
-              {<UpdateUser 
+            <Route path="/updateUser" element=
+                {<UpdateUser 
+                  user={user}
                   setUser={setUser}
                   toggleAuthenticated={toggleAuthenticated}
                 />}/>

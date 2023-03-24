@@ -2,10 +2,10 @@ import Client from './api'
 import UserEmail from '../components/SignIn'
 
 
-export const UpdateUserInfo = async ( data) => {
+export const UpdateUserInfo = async (id, data) => {
   try {
     // console.log(users.email)
-    const res = await Client.put(`/api/users/update/16`, data)
+    const res = await Client.put(`/api/users/update/${id}`, data)
     return res.data
   } catch (error) {
     throw error
