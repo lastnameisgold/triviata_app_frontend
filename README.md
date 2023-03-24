@@ -64,7 +64,7 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
 - Random quiz generation
 - Timed quizzes
 
-## User stories
+## User Stories
 
 <details>
   <summary>Home</summary>
