@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { UpdateUserInfo } from '../services/UserServices'
 
-const UpdateUser = ({user}) => {
+const UpdateUser = ({setUser,user}) => {
     
+
     let navigate = useNavigate()
 
     const [formValues, setFormValues] = useState({ 
@@ -18,15 +19,18 @@ const UpdateUser = ({user}) => {
     // console.log(users)
     const handleSubmit = async (e) => {
         e.preventDefault()
-        await UpdateUserInfo(
-            formValues
+        let updatedUser = await UpdateUserInfo(
+            user.id, formValues
             // name: formValues.name,
             // email: formValues.email
         )
-          console.log(formValues.email)
+        console.log(formValues.email)
+        setUser(updatedUser[1][0])
+        console.log(updatedUser)
         setFormValues({
             name: '', 
             email: ''})
+        
         navigate('/profile')
     }
     
