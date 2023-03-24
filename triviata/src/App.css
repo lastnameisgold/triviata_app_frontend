@@ -566,6 +566,13 @@ body {
   justify-content: space-between;
 }
 
+.hodor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
 .flashcards-definition{
   width: 100%;
   height: 100%;

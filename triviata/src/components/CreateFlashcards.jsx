@@ -34,7 +34,7 @@ export default function CreateFlashCards() {
           <div className="tiles-inner-container">
             <div className="number-trash-container">
               <div className="number">
-                <h3>{index + 1}</h3>
+                <h>{index + 1}</h>
               </div>
               <div className="trash-can">
                 <span>
