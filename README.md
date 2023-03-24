@@ -43,8 +43,6 @@ Triviata is a quiz and flashcard platform that allows users to create and utiliz
 
 </details>
 
-## Technology
-
 ## Key Features
 1. Create Quizzes and Flashcards
 2. Bookmark content

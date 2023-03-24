@@ -1,58 +1,73 @@
-import { useState } from "react"
-export default function Flashcards (){
+import { useState, useEffect } from "react";
+import axios from 'axios';
+import { BASE_URL } from '../services/api';
 
-const[hidden,setHidden] = useState('false')
-const[flip,setFlip]=useState('true')
-const[name,setName]=useState('flip-in flashcards-container')
+export default function Flashcards() {
 
-const showDef = ()=>{
-setHidden(!hidden)
-}
+  const [hidden, setHidden] = useState(false)
+  const [flip, setFlip] = useState(false)
+  const [name, setName] = useState('flip-in flashcards-container')
+  const [currentIndex, setCurrentIndex] = useState(0)
 
-const doFlip = ()=>{
-  setFlip(!flip)
-  flip ?  setName('flip-in flashcards-container'):setName('flip-out flashcards-container')
+  const [flashcardInfo, setFlashcardInfo] = useState(0)
 
-  console.log(name)
-  console.log(flip)
-}
+  const currentFlashcard = flashcardInfo[currentIndex]
 
-  return(
-  <div className={name} onClick={()=>{showDef();doFlip();}}>
-    <div className="flashcards">
+  const showDef = () => {
+    setHidden(!hidden)
+  };
 
-      <div className="flashcards-term" hidden={hidden? true:false}>
+  const doFlip = () => {
+    setFlip(!flip)
+    flip ? setName('flip-in flashcards-container') : setName('flip-out flashcards-container')
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((currentIndex + 1) % flashcardInfo.length)
+    setFlip(false)
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((currentIndex - 1 + flashcardInfo.length) % flashcardInfo.length)
+    setFlip(false)
+  };
+
+  useEffect(() => {
+    const renderFlashcard = async () => {
+      const response = await axios.get(`${BASE_URL}/api/flashcards/view`)
+      setFlashcardInfo(response.data)
+    }
+    renderFlashcard()
+  }, [])
+
+  if (!flashcardInfo) {
+    return <div>Loading...</div>
+  }
+
+  return (
+    <div className={name} onClick={() => { showDef() }}>
+      <div className="flashcards-map">
+        <div key={currentFlashcard.id} className="flashcards">
           <div className="flashcards-inner-container">
-            <div className="flashcard-number"><span>1/24</span></div>{/* change with state*/}
-
-            <div className="term-container"> {/*this can have a state to change the classname to display either term or definiotion based on click*/}
-              <div className="term"><span>Cow Color</span></div>
+            <div className="flashcard-number"><span>{currentIndex + 1}/{flashcardInfo.length}</span></div>
+            <div className="term-container">
+              <div className="term"><span>{currentFlashcard.term}</span></div>
             </div>
-
+            {flip ? (
+              <div className="answer-container">
+                <div className="answer"><span>{currentFlashcard.answer}</span></div>
+              </div>
+            ) : null}
             <div className="prev-next-container">
-              <div className="prev-card"><span>←</span></div>
-              <div className="next-card"><span>→</span></div>
+              <div className="prev-card" onClick={handlePrev}><span>←</span></div>
+              <div className="next-card" onClick={handleNext}><span>→</span></div>
             </div>
-          </div>
-      </div>
-
-
-
-      <div className="flashcards-definition" hidden={!hidden? true:false}> {/*this changes from hidden true to false and the classname changes to show on click it will flip*/}
-        <div className="flashcards-inner-container">
-          <div className="flashcard-number"><span>1/24</span></div>{/* change with state*/}
-          
-          <div className="term-container"> {/*this can have a state to change the classname to display either term or definiotion based on click*/}
-            <div className="term"><span>Color of cow is white and black</span></div>
-          </div>
-
-          <div className="prev-next-container">
-            <div className="prev-card"><span>←</span></div>
-            <div className="next-card"><span>→</span></div>
+            <div className="flip-container">
+              <div className="flip-card" onClick={doFlip}><span>Flip</span></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
   )
 }
