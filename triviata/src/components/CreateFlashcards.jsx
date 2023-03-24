@@ -106,8 +106,8 @@ const showNewCards = ()=>{
 
 
 
-const [formValues, setFormValues] = useState([{term:'',answer:'',likes:'',userId:''}])
-const[values,setValues] = useState({term:'',answer:'',likes:'',userId:''})
+const [formValues, setFormValues] = useState([{term:'',answer:'',likes:2,userId:2}])
+const[values,setValues] = useState({term:'',answer:'',likes:2,userId:2})
   const handleChange = (e) => {
     let newValues = values
     newValues[e.target.name]= e.target.value
@@ -132,9 +132,8 @@ const[values,setValues] = useState({term:'',answer:'',likes:'',userId:''})
  
 
 
-    const p = await SignInUser(formValues[0])
+    const p = await SignInUser(formValues)
 console.log(formValues)
-    setFormValues({term: '', answer: '', likes:''})
 }
 
 //it should reset the forms and it has to ente more than one falshcard
@@ -157,12 +156,14 @@ const SignInUser = async (data) => {
 
  
   try {
-    //  formValues.forEach(async function(value, i) {
+     formValues.forEach(async (value,i,formValues) =>{
 
-    const res = await Client.post('/api/flashcards/create',data)
+    const res = await Client.post('/api/flashcards/create',value)
     // Set the current signed in users token to localStorage
     // localStorage.setItem('token',res.data.token)
     // console.log(res.data.user)
+    console.log(formValues)
+  })
   } catch (error) {
     throw error
   }
@@ -208,7 +209,7 @@ const SignInUser = async (data) => {
       </div>
       <div className="signin col">
       <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
+        <form className="col" onSubmit={handleSubmit} hidden>
           
           <div className="input-wrapper">
             <label className ='color'htmlFor="input">likes</label>
@@ -216,7 +217,7 @@ const SignInUser = async (data) => {
               onChange={handleChange}
               type="input"
               name="likes"
-              value={formValues.likes}
+              value='2'
               required
             />
           </div>
@@ -226,7 +227,7 @@ const SignInUser = async (data) => {
               onChange={handleChange}
               type="input"
               name="userId"
-              value={formValues.userId}
+              value='2'
               required
             />
           </div>
