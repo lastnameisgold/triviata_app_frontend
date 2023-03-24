@@ -19,6 +19,9 @@ const Nav = ({authenticated, user, handleLogOut}) => {
                     Create
                     </button>
                 </Link>
+                <Link to="/flashcards">
+                    <span class="material-symbols-rounded">bolt</span>
+                </Link>
                 <Link to="/bookmarks">
                     <span class="material-symbols-rounded">bookmark</span>
                 </Link>
