@@ -9,7 +9,7 @@ export default function Flashcards() {
   const [name, setName] = useState('flip-in flashcards-container')
   const [currentIndex, setCurrentIndex] = useState(0)
 
-  const [flashcardInfo, setFlashcardInfo] = useState(null)
+  const [flashcardInfo, setFlashcardInfo] = useState(0)
 
   const currentFlashcard = flashcardInfo[currentIndex]
 
