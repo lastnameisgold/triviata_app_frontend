@@ -8,23 +8,13 @@ export default function Profile({user, authenticated}) {
     let navigate = useNavigate()
     const [userProfile, setUserProfile] = useState({})
 
-    // useEffect(() => {
-    //     const handleUser = async () => {
-    //         const data = await GetUsers()
-    //         setUserProfile(data[0])
-    //         console.log(data[0])
-    //         console.log(userProfile)
-    //     }
-    //     handleUser()
-    // },[])
-
-    console.log(user)
-
     const NavigateToUpdate = () => {
         navigate('/updateUser')
     }
 
     return(
+
+
         <div className="profile-container">
 
             <div className='profile-top-section'>
@@ -34,13 +24,13 @@ export default function Profile({user, authenticated}) {
                 <div className='personal-details-container'>
                     <div>
                         <h6>Name</h6>
-                        <h3>Jon Snow</h3>
+                        <h3>{user.name}</h3>
                         {/* <h3>{user.name}</h3> */}
                     </div>
 
                     <div>
                         <h6>Email</h6>
-                        <h3>jsnow@winterfell.com</h3>
+                        <h3>{user.email}</h3>
                         {/* <h3>{user.email}</h3> */}
                     </div>
 
@@ -111,6 +101,7 @@ export default function Profile({user, authenticated}) {
 
                 </div>
             </div>
+
 
         </div>
     )

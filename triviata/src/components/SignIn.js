@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { SignInUser } from '../services/Auth'
 import { useNavigate } from 'react-router-dom'
+import Client from '../services/api'
 
 const SignIn = (props) => {
 
@@ -19,7 +20,12 @@ const SignIn = (props) => {
     // UserEmail = formValues.email
     // console.log(UserEmail)
     setFormValues({email: '', password: ''})
-    props.setUser(payload)
+    console.log(payload)
+    console.log(payload.email)
+    let logUser = await Client.get(`/api/users/view/${payload.email}`)
+    console.log(logUser)
+    props.setUser(logUser.data[0])
+    console.log(props.user)
     props.toggleAuthenticated(true)
     navigate('/')
   }

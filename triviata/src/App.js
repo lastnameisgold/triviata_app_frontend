@@ -62,15 +62,18 @@ function App() {
               user={user}
               authenticated={authenticated}
             />} />
-
           <Route path="/signin" element=
-            {<SignIn
-              setUser={setUser}
-              toggleAuthenticated={toggleAuthenticated}
-            />} />
-          <Route path="/updateUser" element={<UpdateUser />} />
-          <Route path="/register" element={<Register />} />
-
+              {<SignIn 
+                  user={user} 
+                  setUser={setUser}
+                  toggleAuthenticated={toggleAuthenticated}
+                />}/>
+          <Route path="/updateUser" element=
+              {<UpdateUser 
+                  setUser={setUser}
+                  toggleAuthenticated={toggleAuthenticated}
+                />}/>
+          <Route path="/register" element={<Register />}/>
           <Route path="/CreateFlashCards" element={<CreateFlashCards />} />
           <Route path="/flashcards" element={<Flashcards />} />
           <Route path="/update-flashcards" element={<UpdateFlashcard />} />
