@@ -2,15 +2,7 @@
 export default function Title(){
   return(
     <div className="create-title-container">
-      <div className="title-container">
-        <div className="title-inner-container">
-          <input className="title-input" placeholder="Enter a title, likeSpanish 101-Verbs">
-
-          </input>
-        </div>
-
-      </div>
-
+      <input className="title-input" placeholder="Enter a title, likeSpanish 101-Verbs"></input>
     </div>
   )
 }
