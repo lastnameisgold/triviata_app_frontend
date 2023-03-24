@@ -46,28 +46,37 @@ export default function Flashcards() {
 
   return (
     <div className={name} onClick={() => { showDef() }}>
+
       <div className="flashcards-map">
+
         <div key={currentFlashcard.id} className="flashcards">
+
           <div className="flashcards-inner-container">
-            <div className="flashcard-number"><span>{currentIndex + 1}/{flashcardInfo.length}</span></div>
+
             <div className="term-container">
-              <div className="term"><span>{currentFlashcard.term}</span></div>
+              <h3>{currentIndex + 1}/{flashcardInfo.length}</h3>
+
+              <h2>{currentFlashcard.term}</h2>
+
+              {flip ? (
+                  <h3>{currentFlashcard.answer}</h3>
+              ) : null}
             </div>
-            {flip ? (
-              <div className="answer-container">
-                <div className="answer"><span>{currentFlashcard.answer}</span></div>
-              </div>
-            ) : null}
+
             <div className="prev-next-container">
               <div className="prev-card" onClick={handlePrev}><span>←</span></div>
+
+              <div className="flip-card" onClick={doFlip}><h4>View answer</h4></div>
+
               <div className="next-card" onClick={handleNext}><span>→</span></div>
             </div>
-            <div className="flip-container">
-              <div className="flip-card" onClick={doFlip}><span>Flip</span></div>
-            </div>
+
           </div>
+
         </div>
+
       </div>
+
     </div>
   )
 }
