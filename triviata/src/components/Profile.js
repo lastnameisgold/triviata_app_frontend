@@ -13,8 +13,6 @@ export default function Profile({user, authenticated}) {
     }
 
     return(
-
-
         <div className="profile-container">
 
             <div className='profile-top-section'>
@@ -25,13 +23,11 @@ export default function Profile({user, authenticated}) {
                     <div>
                         <h6>Name</h6>
                         <h3>{user.name}</h3>
-                        {/* <h3>{user.name}</h3> */}
                     </div>
 
                     <div>
                         <h6>Email</h6>
                         <h3>{user.email}</h3>
-                        {/* <h3>{user.email}</h3> */}
                     </div>
 
                 </div>
@@ -101,8 +97,6 @@ export default function Profile({user, authenticated}) {
 
                 </div>
             </div>
-
-
         </div>
     )
 }
