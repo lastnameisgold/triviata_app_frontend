@@ -520,9 +520,25 @@ border-radius: 10px;;
 .flashcard-header{
   color: aliceblue;
 }
+
 .create-flashcards-container{
+  width: 100%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  grid-gap:10px;
+}
+
+.tes{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
 }
 /* End of createFlashCards container */
 
