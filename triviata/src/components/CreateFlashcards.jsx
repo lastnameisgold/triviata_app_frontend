@@ -26,34 +26,42 @@ export default function CreateFlashCards(){
 
   const [fruits, setFruits] = useState([]);
   const[count,setCount]=useState(1)
-const addCard=()=>{
-  setCount(count+1) 
-  setFruits([...fruits,count])
-  console.log(fruits)
-  console.log(count)
-
-}
 
 
+const cardArr = []
+ 
 
   const cardTemaplate = (index)=>{
-return (
+
+let card = (
   <div key={index} className="create-tiles-container">
  
         <div className="tiles-container">
           <div className="tiles-inner-container">
             <div className="number-trash-container">
-              <div className="number"><span>{index+2}</span></div>
+              <div className="number"><span>{index+1}</span></div>
               <div className="trash-can"><span><FaTrashAlt onClick={() => removeCards(index)}
 /></span></div>
             </div>
             <div className="term-def-container">
-              <input className="term-container" placeholder="Term">
+            <form className="term-def-container" onSubmit={handleSubmit}>
 
-              </input>
-              <input className="def-container" placeholder="Definition">
+<input id={index} className="term-container" placeholder="Term" onChange={handleChange}
+type="input"
+name="term"
+value={formValues.term}
 
-              </input>
+required>
+
+</input>
+<input id={index} className="def-container" placeholder="Definition" onChange={handleChange}
+type="input"
+name="answer"
+value={formValues.answer}
+required>
+
+</input>
+</form>
             </div>
 
           </div>
@@ -62,7 +70,19 @@ return (
 
       </div>
 )
-  }
+
+return(card)
+
+}
+const addCard=()=>{
+
+  setCount(count+1) 
+  setFruits([...fruits,count])
+  console.log(fruits)
+  console.log(count)
+
+}
+
 const removeCards = (index) => {
   const newFruits = fruits.filter((_, i) => i !== index);
   setFruits(newFruits);
@@ -82,37 +102,111 @@ const showNewCards = ()=>{
   ))
   )
 }
-const [formValues, setFormValues] = useState({term: '', answer: '',likes: '', userId:''})
+//when clicked new card the .name also has teh index which is then added into the state differnetly to antoher index
 
+
+
+const [formValues, setFormValues] = useState([{term:'',answer:'',likes:'',userId:''}])
+const[values,setValues] = useState({term:'',answer:'',likes:'',userId:''})
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
+    let newValues = values
+    newValues[e.target.name]= e.target.value
+    setValues(newValues)
+  let forms = formValues
+  forms[e.target.id] = newValues
+
+    setFormValues(forms)
+
+    
+    console.log(e.target.id)
+
+    console.log(forms)
   }
+  // map into the state based on the key
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const p = await SignInUser(formValues)
-console.log(formValues)
 
+ 
+
+
+    const p = await SignInUser(formValues[0])
+console.log(formValues)
     setFormValues({term: '', answer: '', likes:''})
 }
 
 //it should reset the forms and it has to ente more than one falshcard
 
+
+// [
+//   {
+//   term:'efdf',
+//   answer:'dfdf'
+// },{
+//   term:'dgdgd',
+//   answer:'dgdgd',
+// }
+// ]
+
+
+
 const SignInUser = async (data) => {
+ 
+
+ 
   try {
-    const res = await Client.post('/api/flashcards/create', data)
+    //  formValues.forEach(async function(value, i) {
+
+    const res = await Client.post('/api/flashcards/create',data)
     // Set the current signed in users token to localStorage
     // localStorage.setItem('token',res.data.token)
     // console.log(res.data.user)
   } catch (error) {
     throw error
   }
+
 }
+
+//var for each form to be unquie object which has its own axios based on key. have the form to behave as unique object. give inpnut unique name, when axios mapping through use index as the varable. 
+
+
 
   return(
     
     <div className="create-flashcards-container"> 
- <div className="signin col">
+
+  
+ 
+    <div className='flashcard-header'>
+      <h3>Create a New Flashcard Set</h3>
+    </div>
+      <Title/>
+      <Description/>
+      <div className="tes">
+      
+      {showNewCards()}
+
+      </div>
+      <div className="add-tile-container">
+        <div className="inner-add-container">
+          <div className="add-button-container">
+            <button className="add-card-btn" onClick={addCard}> + Add Card</button>
+         
+
+          </div>
+
+        </div>
+        
+
+      </div>
+      <div className="create-btn-cont">
+        <div className="create-btn-cont-inner">
+        <button className='create-flash-btn' onClick={handleSubmit}>Create</button>
+        </div>
+      </div>
+      <div className="signin col">
       <div className="card-overlay centered">
         <form className="col" onSubmit={handleSubmit}>
           
@@ -141,68 +235,14 @@ const SignInUser = async (data) => {
       </div>
     </div>
 
-    <div className='flashcard-header'>
-      <h3>Create a New Flashcard Set</h3>
-    </div>
-      <Title/>
-      <Description/>
-      <div className="tes">
-      <div className="create-tiles-container">
-        <div className="tiles-container">
-          <div className="tiles-inner-container">
-            <div className="number-trash-container">
-              <div className="number"><span>1</span></div>
-              <div className="trash-can"><span><FaTrashAlt onClick={removeCards}/></span></div>
-            </div>
-            <div className="term-def-container">
-            <form className="term-def-container" onSubmit={handleSubmit}>
-
-              <input className="term-container" placeholder="Term" onChange={handleChange}
-              type="input"
-              name="term"
-              value={formValues.term}
-
-              required>
-
-              </input>
-              <input className="def-container" placeholder="Definition" onChange={handleChange}
-              type="input"
-              name="answer"
-              value={formValues.answer}
-              required>
-
-              </input>
-              </form>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-      {showNewCards()}
-
-      </div>
-      <div className="add-tile-container">
-        <div className="inner-add-container">
-          <div className="add-button-container">
-            <button className="add-card-btn" onClick={addCard}> + Add Card</button>
-         
-
-          </div>
-
-        </div>
-        
-
-      </div>
-      <div className="create-btn-cont">
-        <div className="create-btn-cont-inner">
-        <button className='create-flash-btn' onClick={handleSubmit}>Create</button>
-        </div>
-        </div>
+      {/* <ul>
+        {formValues.map(flash => (
+          <li key={formValues.userId}>{formValues.term}</li>
+        ))}
+      </ul> */}
       
+      </div>
 
-    </div>
   )
   
 }
